@@ -1,0 +1,11 @@
+.container-archive {
+    .archive-post {
+        display: flex;
+        figure {
+            width: 300px;
+            img {
+                width: inherit;
+            }
+        }
+    }
+}

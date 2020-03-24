@@ -1,0 +1,64 @@
+@import './variables.scss';
+
+.footer-top, .footer-bottom{
+	display: flex;
+    padding: 1em 6em;
+    justify-content: space-between;
+}
+
+.footer{
+	background-color: $black;
+	color: #fff;
+	.footer-top{
+		a{
+			color: #fff;
+		}
+	}
+	.footer-bottom{
+		background-color: $blue;
+		a{
+			color: #fff;
+		}
+	}
+}
+
+.social_links {
+	background-color: gray;
+    // height: 24px;
+    padding: 8px;
+    border-radius: 4px;
+    a{
+    	height: inherit;
+    	img{
+			width: 24px;
+		}
+    }
+}
+
+
+
+// scroll to top button
+#topBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #333; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 0; /* Some padding */
+  height: 40px;
+  border-radius: 50%; /* Rounded corners */
+  /*font-size: 18px;  Increase font size */
+}
+
+#topBtn img{
+	width: 40px;
+}
+
+#topBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}

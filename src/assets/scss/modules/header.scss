@@ -1,0 +1,239 @@
+@import 'variables.scss';
+
+// mixins
+// @mixin header {
+//   background-color: $blue;
+//   font-weight: bold;
+//   color: #fff;
+// }
+
+// .main-nav {
+//   @include header;
+// }
+
+.top-bar {grid-area: nav1}
+.header {grid-area: nav2}
+.main-nav {grid-area: nav3}
+
+.navigation {
+	display: inline-grid;
+	grid-template-areas: 
+	'nav1'
+	'nav2'
+	'nav3';
+}
+
+// topbar
+.social-link { grid-area: left; }
+.date { grid-area: middle; }
+.link-right { grid-area: right; }
+
+.top-bar{
+	display: inline-grid;
+	grid-template-areas:
+    'left middle right';
+
+	@include box-layout;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: #fff;
+	font-size: $font;
+	background-color: $black;
+	.social-link {
+		a{
+			color: #fff;
+			padding: 0 5px;
+		}
+	}
+	.date{
+		margin: auto;
+		p{
+			margin: inherit;
+		}
+	}
+	.link-right{
+		display: flex;
+		float: right;
+		.login-link{
+			margin-left: auto;
+			padding: 2px 8px;
+			color: white;
+			border: 1px solid #9a9a9a;
+			a {
+				color: #fff;
+			}
+		}
+	}
+}
+
+
+.logo { grid-area: logo; }
+.banner-ad { grid-area: banner; }
+
+// header
+.header {
+	display: inline-grid;
+	grid-template-areas:
+    'logo banner banner';
+    grid-gap: 5px;
+
+    padding: 2px 20px;
+    .logo{
+		display: block;
+    	img{
+    		width: 140px;
+    		height: auto;
+    		margin: auto;
+    	}
+	}
+    .banner-ad{
+    	margin: auto;
+    }
+}
+
+// navbar
+.main-nav {
+	color: #fff;
+	font-size: $font_large;
+	display: inline-block;
+	#navbar{
+		@include box-layout;
+		// overflow: hidden;
+		z-index: 99;
+		display: flex;
+		background-color: $blue;
+		font-weight: bold;
+		height: 40px;
+		margin: 0 0 10px;
+		align-items: center;
+		.search {
+			cursor: pointer;
+		}
+		a{
+			color: inherit;
+			display: block;
+			// height: 30px;
+			line-height: 40px;
+			padding: 0 15px;
+		}
+		.ham-btn {
+			display: none;
+		}
+	    ul{
+			  padding: 0;
+			  margin: 0;
+	      	li{
+	        	display: flex;
+				float: left;
+				align-items: center;
+				line-height: 40px; /* this should be the same as your #main-nav height */
+				height: 40px; /* this should be the same as your #main-nav height */
+				margin: 0; padding: 0; /* only needed if you don't have a reset */
+				position: relative;
+				a{
+					display: block;
+					// height: 30px;
+					// line-height: 30px;
+					padding: 0 15px;
+				}
+				a:hover {
+    				background: #0051af;	
+				}
+				ul{
+					display: none; /* hide all sub menus from view */
+					position: absolute;
+					top: 40px; /* this should be the same height as the top level menu -- height + padding + borders */	
+					li{
+						float: none; /* overwriting our float up above */
+						width: 150px;
+						a {
+							padding: 0px 10px;
+							color: #f5f5f5;
+    						background: #005fcc;
+						}
+						ul {
+							/* target all second, third, and deeper level sub menus */
+							left: 150px; /* this needs to match the sub menu width set above -- width + padding + borders */
+							top: 0; /* this ensures the sub menu starts in line with its parent item */
+						}
+					}		
+				}
+			}
+			li:hover > ul {
+				display: block; /* show sub menus when hovering over a parent */
+			}
+	    }
+	    .search{
+	    	margin: auto;
+    		margin-right: inherit;
+	    }
+	}
+	.trending{
+		display: flex;
+		@include box-layout;
+		margin: 4px 0;
+		.heading{
+			background-color: $red;
+			display: inline-block;
+			padding: 6px;
+
+		}
+		.content{
+			display: inline-block;
+ 			position: relative;
+ 			margin: auto;
+			margin-left: inherit;
+			padding-left: 10px;
+ 			li{
+ 				display: inherit;
+				a{
+					color: #000;
+					font-size: 13px;
+					overflow: hidden;			
+				}
+ 			}
+		}
+		.switch-button{
+			display: inline-block;
+			margin: auto;
+			margin-right: inherit;
+			color: #000;
+			cursor: pointer;
+			span{
+				i{
+					border: 1px solid #ddd;
+					float: left;
+					padding: 2px 4px;
+					color: $black;
+					border-radius: 2px;
+				}
+			}
+		}
+	}
+}
+
+
+
+// dropdown icon
+.menu-item-has-children span {
+	padding-left: 2px;
+}
+.menu-item-has-children span > i{
+	font-size: 12px;
+	transition: transform 0.1s ease;
+}
+.menu .menu-item-has-children:hover > a span i{
+	transform: rotate(180deg);
+}
+
+//sticky menu
+.sticky {
+    position: fixed;
+    top: 0em;
+    left: 0;
+    right: 0;
+}
+
+.mob-menu{
+	display: none;
+}

@@ -1,0 +1,17 @@
+//colors
+$red: red;
+$black: #202020;
+$blue: #005fcc;
+$green: green;
+$yellow: yellow;
+
+// font
+$font: 12px;
+$font_large: 14px;
+$roboto: 'Roboto', sans-serif;
+
+//layout
+@mixin box-layout{
+	padding-left: 50px;
+	padding-right: 50px;
+}
