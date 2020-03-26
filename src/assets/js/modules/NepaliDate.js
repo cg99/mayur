@@ -1,6 +1,6 @@
 class NepaliDate {
     constructor(){
-        // element
+        // get element
         this.topDate = document.querySelector('#topDate p');
 
         // nepali weekdays

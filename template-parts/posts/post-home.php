@@ -1,6 +1,16 @@
 <div>
-	<!-- main posts -->
-	<h1 class="post-header">Latest Updates</h1>
+
+	<?php get_template_part('template-parts/groups/group', '1'); ?> <!-- g1 -->
+
+
+
+
+
+
+
+	
+	<!-- latest posts -->
+	<h2>Latest</h2>
 	<div class="post-container" id="postHome">
 		<?php 
 		// pull 5 posts 
@@ -13,18 +23,18 @@
 		
     	<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-			<?php get_template_part('template-parts/post', 'article'); ?>
+			<?php get_template_part('template-parts/posts/post', 'article'); ?>
 
 		<?php endwhile; wp_reset_postdata(); else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 		<?php endif; ?>
 	
 	</div>
-
+			
 	<hr>
 
     <!-- category post -->
-	<h1> Local</h1>
+	<h2> Local</h2>
 	<div class="post-container">
 		<?php 
 		// pull 5 posts 
@@ -42,7 +52,7 @@
 		
     	<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-			<?php get_template_part('template-parts/post', 'article'); ?>
+			<?php get_template_part('template-parts/posts/post', 'article'); ?>
 
 		<?php endwhile; wp_reset_postdata(); else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
@@ -53,7 +63,7 @@
 	<hr>
 
     <!-- category post -->
-	<h1>International</h1>
+	<h2>International</h2>
 	<div class="post-container">
 		<?php 
 		// pull 5 posts 
@@ -71,7 +81,7 @@
 		
     	<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-			<?php get_template_part('template-parts/post', 'article'); ?>
+			<?php get_template_part('template-parts/posts/post', 'article'); ?>
 
 		<?php endwhile; wp_reset_postdata(); else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>

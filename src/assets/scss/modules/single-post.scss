@@ -1,0 +1,61 @@
+// responsive single post
+
+// grid area names
+.single-post {
+    figure{
+        grid-area: img;
+        margin: 0;
+    }
+    .single-post-title{
+        grid-area: title;
+    }
+    .single-post-date{
+        grid-area: date;
+        margin-right: 1rem;
+    }
+    .single-content{
+        grid-area: content;
+    }
+}
+// large screen (laptop and computer)
+.single-post {
+    display: grid;
+    grid-template-areas: 
+        'title'
+        'img'
+        'date' 
+        'content';
+}
+
+// medium screen (tablet)
+@media (max-width: 768px) {
+    .single-post{
+        grid-template-areas: 
+        'title'
+        'date' 
+        'img'
+        'content';
+        text-align: left;
+        figure{
+            img{
+                width: 100vw;
+            }
+        }
+        
+        figure img, .single-post-title, .single-post-date, .single-content{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+}
+
+// small screen (mobile)
+@media (max-width: 568px) {
+    .single-post{
+        grid-template-areas: 
+        'img'
+        'title'
+        'date' 
+        'content';
+    }
+}

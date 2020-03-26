@@ -1,4 +1,5 @@
 // media query
+//small
 @media (max-width: 568px) {
 	.top-bar, #navbar a.home, .menu {
 		display: none;
@@ -113,8 +114,8 @@
         #app{
             max-width: inherit;
             .main{
-                max-width: inherit;
-                padding: 0;
+                max-width: 100vw;
+                padding: 0px 0px;
                 .wrapper {
                     margin: 0;
                     figure{
@@ -155,10 +156,9 @@
         .footer {
             text-align: center;
             .footer-top{
-                flex-direction: column;
                 padding: 1em 3em;
                 .social-links{
-                    width: fit-content;
+                    margin: auto;
                 }
             }
             .footer-bottom{
@@ -178,4 +178,3 @@
         transition: transform 0.15s ease;
     }
 }
-

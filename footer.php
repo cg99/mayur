@@ -18,7 +18,7 @@
 				</div>
 				<div>
 					<h2>Find Us</h2>
-					<div class="social_links">
+					<div class="social-links">
 						<a href="<?php echo get_theme_mod('socialInstagram', 'https://www.instagram.com/um_es/'); ?>" id="socialInstagram">
 							<img src="<?php echo get_theme_file_uri(); ?>/dist/img/icons/instagram.svg"></a>
 						<a href="<?php echo get_theme_mod('socialFacebook'); ?>" id="socialFacebook">
@@ -41,16 +41,11 @@
 					<p id="optionEmail"><?php echo get_theme_mod('email', 'info@danphe.com'); ?></p>
 				</div>
 			</div>
-
 		</div>
 		<div class="footer-bottom">
 			<div><p>Developed by: Umesh GM</p></div>
-			<div><p>Danphe.com | All rights reserved &copy; 2020</p></div>
-			<div>
-				<p>Contact information: <a href="mailto:someone@example.com">
-					someone@example.com</a>.</p>
-			</div>
-		
+			<div><p>mayurtheme.com.np | All rights reserved &copy; 2020</p></div>
+
 			<button id="topBtn" title="Go to top">
 				<img src="<?php echo get_theme_file_uri('/dist/img/scroll to top.png'); ?>">
 			</button>

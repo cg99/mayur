@@ -1,47 +1,51 @@
 @import './variables.scss';
 
 .footer-top, .footer-bottom{
-	display: flex;
-    padding: 1em 6em;
-    justify-content: space-between;
+    padding: 0 6em;
+    a, p{
+			color: #fff;
+    }
+    a:hover {
+			text-decoration: underline;
+		}
 }
 
 .footer{
 	background-color: $black;
 	color: #fff;
 	.footer-top{
-		a{
-			color: #fff;
-		}
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-bottom: 1rem;
 	}
 	.footer-bottom{
+    display: flex;
+    justify-content: space-between;
 		background-color: $blue;
-		a{
-			color: #fff;
-		}
 	}
 }
 
-.social_links {
-	background-color: gray;
-    // height: 24px;
-    padding: 8px;
-    border-radius: 4px;
-    a{
-    	height: inherit;
-    	img{
-			width: 24px;
-		}
+.social-links {
+  background-color: gray;
+  // height: 24px;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 4px;
+  a{
+    height: inherit;
+    img{
+      width: 24px;
     }
+  }
 }
 
 
 
 // scroll to top button
 #topBtn {
-  display: none; /* Hidden by default */
+  display: block; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
+  bottom: -50px; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
@@ -52,7 +56,7 @@
   padding: 0; /* Some padding */
   height: 40px;
   border-radius: 50%; /* Rounded corners */
-  /*font-size: 18px;  Increase font size */
+  transition: bottom 0.2s ease-in-out;
 }
 
 #topBtn img{

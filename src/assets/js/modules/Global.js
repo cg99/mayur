@@ -60,9 +60,9 @@ class Global {
 	scrollFunction() { 
 		//show to the top button on scroll
   		if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-		    this.btnTop.style.display = "block";
+			this.btnTop.style.bottom = "20px";
 		} else {
-		    this.btnTop.style.display = "none";
+		    this.btnTop.style.bottom = "-50px";
 		}
 
 		// for fixed navbar
@@ -117,14 +117,14 @@ class Global {
 		// console.log(menuDrop);
 		menuDrop.forEach(menu => {
 			const dropIcon = document.createElement('span');
-			dropIcon.innerHTML = '<i class="fa fa-chevron-down"></i>';
+			dropIcon.innerHTML = '<i class="fa fa-chevron-down">></i>';
 			menu.appendChild(dropIcon);
 		})
 
 		//for mobile
 		mobMenuDrop.forEach(menu => {
 			const dropIcon = document.createElement('span');
-			dropIcon.innerHTML = '<i class="fa fa-chevron-down"></i>';
+			dropIcon.innerHTML = '<i class="fa fa-chevron-down">></i>';
 			menu.insertBefore(dropIcon, this.subMenu);
 		})
 	}

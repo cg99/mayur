@@ -1,6 +1,6 @@
 <nav id="navbar" class="header_nav">
-    <a href="<?php echo site_url(); ?>" class="home"><i class="fa fa-home" aria-hidden="true"></i></a>
-    <a href="#" class="ham-btn"><i class="fa fa-th-list"></i></a>
+    <a href="<?php echo site_url(); ?>" class="home"><i class="fa fa-home" aria-hidden="true">Mayur</i></a>
+    <a href="#" class="ham-btn"><i class="fa fa-th-list">=</i></a>
 
     <?php 
         wp_nav_menu(
@@ -13,5 +13,5 @@
             )
         );
     ?>
-    <a class="search search-trigger"> <i class="fa fa-search"></i></a>
+    <a class="search search-trigger"> <i class="fa fa-search">s</i></a>
 </nav>

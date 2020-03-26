@@ -10773,9 +10773,9 @@ function () {
     value: function scrollFunction() {
       //show to the top button on scroll
       if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        this.btnTop.style.display = "block";
+        this.btnTop.style.bottom = "20px";
       } else {
-        this.btnTop.style.display = "none";
+        this.btnTop.style.bottom = "-50px";
       } // for fixed navbar
 
 
@@ -10847,13 +10847,13 @@ function () {
 
       menuDrop.forEach(function (menu) {
         var dropIcon = document.createElement('span');
-        dropIcon.innerHTML = '<i class="fa fa-chevron-down"></i>';
+        dropIcon.innerHTML = '<i class="fa fa-chevron-down">></i>';
         menu.appendChild(dropIcon);
       }); //for mobile
 
       mobMenuDrop.forEach(function (menu) {
         var dropIcon = document.createElement('span');
-        dropIcon.innerHTML = '<i class="fa fa-chevron-down"></i>';
+        dropIcon.innerHTML = '<i class="fa fa-chevron-down">></i>';
         menu.insertBefore(dropIcon, _this.subMenu);
       });
     }
@@ -10921,7 +10921,7 @@ function () {
   function NepaliDate() {
     _classCallCheck(this, NepaliDate);
 
-    // element
+    // get element
     this.topDate = document.querySelector('#topDate p'); // nepali weekdays
 
     this.npWeek = ['आइतवार', 'सोमवार', 'मगलवार', 'बुधवार', 'बिहिवार', 'शुक्रवार', 'शनिवार']; // parameters

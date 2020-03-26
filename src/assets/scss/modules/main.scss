@@ -4,14 +4,7 @@
 	@include box-layout;
 }
 
-.post:first-child{
-    grid-area: featured;
-    width: 300px !important;
-    figure{
-        width: 300px !important;
-        img{width: inherit;}
-    }
-}
+.post:first-child{grid-area: featured}
 .post:nth-child(2){grid-area: side1}
 .post:nth-child(3){grid-area: side2}
 .post:nth-child(4){grid-area: side3}
@@ -20,19 +13,23 @@
 // main posts section
 .main-content {
     width: auto;
+    display: flex;
+    justify-content: center;
 
     div.post-container{
         display: inline-grid;
-        width: 100%;
         grid-template-areas:
         'featured side1 side2'
         'featured side3 side4';
         grid-gap: 20px;
+        // width: 100%;
+        // margin: 1rem 0;
         article.post{
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             margin: 0 auto;
             width: 240px;
-            height: fit-content;
+            height: auto;
+            transition: transform 0.1s ease-in-out;
             figure{
                 margin: auto;
                 width: 240px;
@@ -47,6 +44,9 @@
             .post-title{
                 a{
                     color: #333;
+                }
+                a:hover{
+                    text-decoration: underline;
                 }
             }
             .post-date{
@@ -67,6 +67,17 @@
             .post-excerpt{
                 color: #444;
             }
+        }
+        article.post:first-child{
+            width: 600px;
+            figure{
+                width: 600px;
+                height: auto;
+                img{width: inherit;}
+            }
+        }
+        article.post:hover{
+            transform: scale(1.03);
         }
     }    
 }
