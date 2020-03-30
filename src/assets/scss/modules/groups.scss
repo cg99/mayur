@@ -3,9 +3,8 @@ $group-height: 450px;
 $gap: 5px;
 
 #group1{
-    width: 100%;
     .post:first-child{
-        grid-area: g1-1;
+        grid-area: g1-a;
         width: $group-width;
         height: $group-height + $gap;
         figure{
@@ -13,44 +12,87 @@ $gap: 5px;
             height: $group-height + $gap;
             img{width: inherit;}
         }
-    }
-    .post:nth-child(2){
-        grid-area: g1-2;
-        width: $group-width;
-        figure{
-            width: $group-width;
-            height: ($group-height * 2) / 3;
-            img{width: inherit;}
+        .post-details{
+            .post-title a{
+                font-size: 2rem;
+            }
+            .post-date{
+                display: block;
+            }
         }
     }
-    .post:nth-child(3){grid-area: g1-3}
-    .post:nth-child(4){grid-area: g1-4}
+    .post:nth-child(2){
+        grid-area: g1-b;
+        width: $group-width + $gap;
+        figure{
+            width: $group-width + $gap;
+            height: ($group-height * 3) / 5;
+            img{width: inherit;}
+        }
+        .post-details{
+            .post-title a{
+                font-size: 22px;
+            }
+            .post-date{
+                display: block;
+            }
+        }
+    }
+    .post:nth-child(3){grid-area: g1-c}
+    .post:nth-child(4){grid-area: g1-d}
 }
 
 
 #group1 {
-    display: grid;
+    display: inline-grid;
     grid-template-areas: 
-        'g1-1 g1-2 g1-2'
-        'g1-1 g1-3 g1-4';
+        'g1-a g1-b g1-b'
+        'g1-a g1-c g1-d';
     grid-gap: $gap;
     .post{
-        margin: 0;
+        position: relative;
+        margin: 0 auto;
         width: $group-width / 2;
         height: auto;
         figure{
             margin: auto;
             width: $group-width / 2;
-            height: $group-height / 3;
+            height: ($group-height * 2)/ 5;
             overflow: hidden;
             img {
                 width: inherit;
                 height: inherit;
                 object-fit: cover;
+                transition: transform 0.15s ease-in;
             }
         }  
         .post-details{
-            display: none;
+            position: absolute;
+            left: $gap;
+            bottom: $gap;
+            color: white;
+            .post-title a{
+                color: #fff;
+                text-shadow: 1px 1px 4px #444;
+                font-size: 18px;
+            }
+            .post-date{
+                display: none;
+                text-shadow: 1px 1px 4px #666;
+            }
+            .post-category{
+                display: block;
+                span{
+                    background-color:#444;
+                    font-size: 10px;
+                    text-transform: uppercase;
+                    padding: 2px 4px;
+                    margin: 2px;
+                }
+            }
         }
+    }
+    .post:hover img{
+        transform: scale(1.06);
     }
 }

@@ -350,8 +350,9 @@ main {
   background-color: #005fcc;
   font-weight: bold;
   height: 40px;
-  margin: 0 0 10px;
+  margin: 0 0 20px;
   align-items: center;
+  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
 .main-nav #navbar .search {
@@ -875,12 +876,8 @@ main {
   }
 }
 
-#group1 {
-  width: 100%;
-}
-
 #group1 .post:first-child {
-  grid-area: g1-1;
+  grid-area: g1-a;
   width: 532px;
   height: 455px;
 }
@@ -894,36 +891,53 @@ main {
   width: inherit;
 }
 
+#group1 .post:first-child .post-details .post-title a {
+  font-size: 2rem;
+}
+
+#group1 .post:first-child .post-details .post-date {
+  display: block;
+}
+
 #group1 .post:nth-child(2) {
-  grid-area: g1-2;
-  width: 532px;
+  grid-area: g1-b;
+  width: 537px;
 }
 
 #group1 .post:nth-child(2) figure {
-  width: 532px;
-  height: 300px;
+  width: 537px;
+  height: 270px;
 }
 
 #group1 .post:nth-child(2) figure img {
   width: inherit;
 }
 
+#group1 .post:nth-child(2) .post-details .post-title a {
+  font-size: 22px;
+}
+
+#group1 .post:nth-child(2) .post-details .post-date {
+  display: block;
+}
+
 #group1 .post:nth-child(3) {
-  grid-area: g1-3;
+  grid-area: g1-c;
 }
 
 #group1 .post:nth-child(4) {
-  grid-area: g1-4;
+  grid-area: g1-d;
 }
 
 #group1 {
-  display: grid;
-  grid-template-areas: "g1-1 g1-2 g1-2" "g1-1 g1-3 g1-4";
+  display: inline-grid;
+  grid-template-areas: "g1-a g1-b g1-b" "g1-a g1-c g1-d";
   grid-gap: 5px;
 }
 
 #group1 .post {
-  margin: 0;
+  position: relative;
+  margin: 0 auto;
   width: 266px;
   height: auto;
 }
@@ -931,7 +945,7 @@ main {
 #group1 .post figure {
   margin: auto;
   width: 266px;
-  height: 150px;
+  height: 180px;
   overflow: hidden;
 }
 
@@ -940,9 +954,40 @@ main {
   height: inherit;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: transform 0.15s ease-in;
 }
 
 #group1 .post .post-details {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  color: white;
+}
+
+#group1 .post .post-details .post-title a {
+  color: #fff;
+  text-shadow: 1px 1px 4px #444;
+  font-size: 18px;
+}
+
+#group1 .post .post-details .post-date {
   display: none;
+  text-shadow: 1px 1px 4px #666;
+}
+
+#group1 .post .post-details .post-category {
+  display: block;
+}
+
+#group1 .post .post-details .post-category span {
+  background-color: #444;
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 2px 4px;
+  margin: 2px;
+}
+
+#group1 .post:hover img {
+  transform: scale(1.06);
 }
 

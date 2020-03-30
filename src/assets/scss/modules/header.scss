@@ -104,8 +104,9 @@
 		background-color: $blue;
 		font-weight: bold;
 		height: 40px;
-		margin: 0 0 10px;
+		margin: 0 0 20px;
 		align-items: center;
+		box-shadow: 0px 6px 8px 0px rgba(0,0,0,.2);
 		.search {
 			cursor: pointer;
 		}

@@ -7,7 +7,7 @@
 			<?php get_template_part('template-parts/ads/ads', 'banner');?>
 
 			<section class="main-content">
-				<?php get_template_part('template-parts/posts/post', 'home');?>
+				<?php get_template_part('template-parts/page/page', 'home');?>
 			</section>
 
 		</main>

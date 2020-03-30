@@ -12,11 +12,12 @@ class Global {
 		this.btnTop = document.querySelector('#topBtn');//scroll to top
 		this.navbar = document.getElementById('navbar');//navbar
 
-
+		// trending
+		this.trending = document.querySelector('.trending');//trending
 		this.btnNext = document.querySelector('#btnNext'); //next ticker btn
 		this.btnPrev = document.querySelector('#btnPrev'); //next ticker btn
-		this.trending = document.getElementById('trendTitle');//trending title ul
-		this.nodelist = this.trending.getElementsByTagName('a');//trending title a tag
+		this.trendTitle = document.getElementById('trendTitle');//trending title ul
+		this.nodelist = this.trendTitle.getElementsByTagName('a');//trending title a tag
 
 		this.btnNav = document.querySelector('.ham-btn'); //mobile menu btn
 		this.btnNavClose = document.querySelector('.mobile-menu_close'); //close menu btn
@@ -66,12 +67,16 @@ class Global {
 		}
 
 		// for fixed navbar
-		let navLoc = navbar.offsetTop;
+		const navLoc = navbar.offsetTop;
+		const menuStyle = this.navbar.currentStyle || window.getComputedStyle(this.navbar); // get css properties
+		const menuMarginBottom = parseInt(menuStyle.marginBottom);
 		if (window.pageYOffset > navLoc) {
 			this.navbar.classList.add('sticky');
+			this.trending.style.paddingTop = `${this.navbar.offsetHeight + menuMarginBottom}px`;
 		} 
 		else {
 			this.navbar.classList.remove('sticky');
+			this.trending.style.paddingTop = `0`;
 		}
 	}
 
@@ -117,14 +122,14 @@ class Global {
 		// console.log(menuDrop);
 		menuDrop.forEach(menu => {
 			const dropIcon = document.createElement('span');
-			dropIcon.innerHTML = '<i class="fa fa-chevron-down">></i>';
+			dropIcon.innerHTML = '<i class="fa fa-chevron-down"></i>';
 			menu.appendChild(dropIcon);
 		})
 
 		//for mobile
 		mobMenuDrop.forEach(menu => {
 			const dropIcon = document.createElement('span');
-			dropIcon.innerHTML = '<i class="fa fa-chevron-down">></i>';
+			dropIcon.innerHTML = '<i class="fa fa-chevron-down"></i>';
 			menu.insertBefore(dropIcon, this.subMenu);
 		})
 	}

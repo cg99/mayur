@@ -5,7 +5,9 @@
 
 
 
-
+	<div style="display:flex;width:100%;justify-content:center;justify-items:center;height:40rem;margin:auto;">
+		<p style="align-self: center;">SEPARATOR</p>
+	</div>
 
 
 	
