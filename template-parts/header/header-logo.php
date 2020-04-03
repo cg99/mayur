@@ -6,7 +6,7 @@
         <a class="logo-title hidden">Danphe</a>
     </div>
     <!-- header img / advertisement -->
-    <div class="wrapper" style="margin: auto">
+    <div class="wrapper" style="margin-left: auto">
         <section class="advertise">
             <figure>
                 <img src="<?php echo get_theme_mod('header', 'default'); ?>">

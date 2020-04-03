@@ -17,7 +17,6 @@
 				</div> 
 
 				<div class="post-category">
-					
 					<?php 
 					$categories = get_the_category();
 					if($categories[0]->name !== 'Uncategorized'){ 
@@ -26,7 +25,10 @@
 							<?php echo $category->name; ?>
 						</span>
 					<?php } } ?>
-					
 				</div>
+
+				<div class="post-excerpt">
+                    <?php the_excerpt() ?>
+                </div>
 			</div>			
 		</article>

@@ -1,18 +1,18 @@
 <div>
 
-	<?php get_template_part('template-parts/groups/group', '1'); ?> <!-- g1 -->
+	<?php get_template_part('template-parts/groups/group', '1'); ?> <!-- group 1 -->
 
 
-
+	<?php get_template_part('template-parts/groups/group', '2'); ?> <!-- group 2 -->
+	
 
 	<div style="display:flex;width:100%;justify-content:center;justify-items:center;height:40rem;margin:auto;">
 		<p style="align-self: center;">SEPARATOR</p>
 	</div>
 
 
-	
 	<!-- latest posts -->
-	<h2>Latest</h2>
+	<!-- <h2>Latest</h2>
 	<div class="post-container" id="postHome">
 		<?php 
 		// pull 5 posts 
@@ -33,10 +33,10 @@
 	
 	</div>
 			
-	<hr>
+	<hr> -->
 
     <!-- category post -->
-	<h2> Local</h2>
+	<!-- <h2> Local</h2>
 	<div class="post-container">
 		<?php 
 		// pull 5 posts 
@@ -62,10 +62,10 @@
 	
 	</div>
 
-	<hr>
+	<hr> -->
 
     <!-- category post -->
-	<h2>International</h2>
+	<!-- <h2>International</h2>
 	<div class="post-container">
 		<?php 
 		// pull 5 posts 
@@ -89,5 +89,5 @@
 		<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 		<?php endif; ?>
 	
-	</div>
+	</div> -->
 </div>

@@ -8,7 +8,7 @@
     </div>
     <div class="link-right">
         <div class="login-link">
-            <a href=""><i class="fa fa-sign-in"></i> Login</a>
+            <a href=""><i class="fa fa-sign-in"></i></a>
         </div>
     </div>
 </div>
