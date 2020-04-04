@@ -6,6 +6,8 @@
 	<?php get_template_part('template-parts/groups/group', '2'); ?> <!-- group 2 -->
 	
 
+	<?php get_template_part('template-parts/groups/group', '3'); ?> <!-- group 3 -->
+
 	<div style="display:flex;width:100%;justify-content:center;justify-items:center;height:40rem;margin:auto;">
 		<p style="align-self: center;">SEPARATOR</p>
 	</div>

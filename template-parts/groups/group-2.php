@@ -52,10 +52,10 @@
                 </a>
             </div>
            <div class="bigyapan">
-            <figure>
-                <figcaption class="">- Advertisement -</figcaption>     
-                <img src="<?php echo get_theme_file_uri(); ?>/dist/img/post_img.png" alt="Bigyapan">
-            </figure>
+                <figure>
+                    <figcaption class="">- Advertisement -</figcaption>     
+                    <img src="<?php echo get_theme_file_uri(); ?>/dist/img/post_img.png" alt="Bigyapan">
+                </figure>
            </div>
         </div>
     </div>

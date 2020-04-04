@@ -1,20 +1,21 @@
 	<footer class="footer">
 		<div class="footer-top">
-			<div class="col-1">
-				<h2>Popular News</h2>
-				<p><a href="#">ELECTION 2020</a></p>
-				<p><a href="#">NEPAL EARTHQUAKE 2072</a></p>
-				<p><a href="#">FIFA WORLD CUP 2014</a></p>
-				<p><a href="#">ICC CRICKET WORLD CUP 2019</a></p>
-				<p><a href="#">SEVENTH NATIONAL GAME 2076</a></p>
+			<div class="col">
+				<div class="wrapper">
+					<h2>Popular News</h2>
+					<p><a href="#">ELECTION 2020</a></p>
+					<p><a href="#">NEPAL EARTHQUAKE 2072</a></p>
+					<p><a href="#">FIFA WORLD CUP 2014</a></p>
+					<p><a href="#">ICC CRICKET WORLD CUP 2019</a></p>
+					<p><a href="#">SEVENTH NATIONAL GAME 2076</a></p>
+				</div>
 			</div>
-			<div class="col-2">
+			<div class="col" style="display:flex;justify-content:center">
 				<div>
 					<h2>Our Team</h2>
 					<p><a href="#">About Us</a></p>
 					<p><a href="#">Privacy</a></p>
-				</div>
-				<div>
+				
 					<h2>Follow Us</h2>
 					<div class="social-links">
 						<a href="<?php echo get_theme_mod('socialInstagram', 'https://www.instagram.com/um_es/'); ?>" id="socialInstagram">
@@ -28,15 +29,17 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-3">
-				<h2>Contact</h2>
-				<div>
-					<address id="optionAddress1">Address - <?php echo get_theme_mod('address1', 'Pokhara, NP'); ?></address>
-					<address id="optionAddress2">Street - <?php echo get_theme_mod('address2', 'Rambazar - 10'); ?></address>
-				</div>
-				<div>
-					<p id="optionContact">Phone - <?php echo get_theme_mod('contact', '+977 9806632774'); ?></p>
-					<p id="optionEmail">Email - <?php echo get_theme_mod('email', 'info@danphe.com'); ?></p>
+			<div class="col" style="display:flex;justify-content:flex-end">
+				<div class="wrapper">
+					<h2>Contact</h2>
+					<div>
+						<address id="optionAddress1">Address - <?php echo get_theme_mod('address1', 'Pokhara, NP'); ?></address>
+						<address id="optionAddress2">Street - <?php echo get_theme_mod('address2', 'Rambazar - 10'); ?></address>
+					</div>
+					<div>
+						<p id="optionContact">Phone - <?php echo get_theme_mod('contact', '+977 9806632774'); ?></p>
+						<p id="optionEmail">Email - <?php echo get_theme_mod('email', 'info@danphe.com'); ?></p>
+					</div>
 				</div>
 			</div>
 		</div>
