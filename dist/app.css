@@ -1342,3 +1342,73 @@ a {
   display: none;
 }
 
+#group4 .post:first-child {
+  grid-area: g4-a;
+}
+
+#group4 .post:nth-child(2) {
+  grid-area: g4-b;
+  margin: 0 6px;
+}
+
+#group4 .post:nth-child(3) {
+  grid-area: g4-c;
+}
+
+#group4 {
+  display: grid;
+  grid-template-areas: "g4-a g4-b g4-c";
+}
+
+#group4 .post {
+  display: block;
+  width: 240px;
+  height: auto;
+  position: relative;
+}
+
+#group4 .post figure {
+  width: 240px;
+  height: 170px;
+  margin: 0;
+}
+
+#group4 .post figure img {
+  width: inherit;
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#group4 .post .post-details .post-title a {
+  font-size: 15px;
+  color: #333;
+}
+
+#group4 .post .post-details .post-category {
+  position: absolute;
+  left: 0;
+  bottom: 46px;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+#group4 .post .post-details .post-category span {
+  display: none;
+}
+
+#group4 .post .post-details .post-category span:first-child {
+  display: block;
+  background-color: #444;
+  color: white;
+  font-size: 11px;
+  padding: 2px 4px;
+  margin: 2px;
+  margin-left: 0;
+}
+
+#group4 .post .post-details .post-excerpt,
+#group4 .post .post-details .post-date {
+  display: none;
+}
+
