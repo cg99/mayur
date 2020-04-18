@@ -47,7 +47,7 @@ class NepaliDate {
 
     convertMonths() {
         switch(this.month) {
-        case "Baisakh":
+        case "Baishak":
             this.month = "बैसाख";
             break;
         case "Jestha":

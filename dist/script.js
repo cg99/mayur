@@ -10984,7 +10984,7 @@ function () {
     key: "convertMonths",
     value: function convertMonths() {
       switch (this.month) {
-        case "Baisakh":
+        case "Baishak":
           this.month = "बैसाख";
           break;
 

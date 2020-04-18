@@ -34,16 +34,12 @@ a {
     'main'
     'foot';
   grid-gap: 5px;
-  background-color: #eee;
+  // background-color: #eee;
 }
 
 @mixin grid-item-pad {
   // background-color: rgba(255, 255, 255, 0.8);
   padding: 10px;
-}
-
-main {
-  // @include grid-item-pad;
 }
 
 // utility class

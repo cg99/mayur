@@ -104,8 +104,8 @@ require get_theme_file_path('/inc/posts-route.php');
 	add_action( 'widgets_init', 'arphabet_widgets_init' );
 	function arphabet_widgets_init() {
 		register_sidebar( array(
-			'name'          => 'Home right sidebar',
-			'id'            => 'home_right_1',
+			'name'          => 'Single right sidebar',
+			'id'            => 'single_right_1',
 			'before_widget' => '<div>',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="rounded">',
@@ -137,4 +137,17 @@ require get_theme_file_path('/inc/posts-route.php');
 		 );
 	   }
 
+	// excerpt length
+	function wpdocs_custom_excerpt_length( $length ) {
+		return 32;
+	}
+	add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+	// remove url comment field
+	function remove_website_field($fields) {
+		unset($fields['url']);
+		return $fields;
+	}
+	add_filter('comment_form_default_fields', 'remove_website_field');
+	
 ?>

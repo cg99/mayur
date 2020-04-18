@@ -165,7 +165,6 @@ a {
   display: grid;
   grid-template-areas: "head" "main" "foot";
   grid-gap: 5px;
-  background-color: #eee;
 }
 
 .hidden {
@@ -839,27 +838,100 @@ a {
   }
 }
 
+.single-content {
+  display: flex;
+  background-color: #fff;
+}
+
 .single-post figure {
   grid-area: img;
+  width: 700px;
   margin: 0;
+}
+
+.single-post figure img {
+  width: inherit;
 }
 
 .single-post .single-post-title {
   grid-area: title;
+  font-size: 36px;
+  font-weight: 400;
 }
 
 .single-post .single-post-date {
   grid-area: date;
   margin-right: 1rem;
+  font-size: 12px;
 }
 
 .single-post .single-content {
   grid-area: content;
+  display: block;
 }
 
 .single-post {
   display: grid;
   grid-template-areas: "title" "img" "date" "content";
+  color: #222;
+  font-size: 15px;
+}
+
+.single-sidebar .bigyapan figure {
+  width: 350px;
+}
+
+.single-sidebar .bigyapan figure img {
+  width: inherit;
+}
+
+.separator {
+  background-color: #ccc;
+  height: 1px;
+  margin: 2rem 0;
+}
+
+.other-posts {
+  display: flex;
+}
+
+.other-posts .prev-post {
+  width: 48%;
+  margin-right: 2%;
+}
+
+.other-posts .prev-post div {
+  font-size: 12px;
+  color: #666;
+}
+
+.other-posts .next-post {
+  width: 48%;
+  margin-left: 2%;
+  text-align: right;
+}
+
+.other-posts .next-post div {
+  font-size: 12px;
+  color: #666;
+}
+
+.comments-area .comment-form #comment,
+.comments-area .comment-form #author,
+.comments-area .comment-form #email {
+  padding: 3px 9px;
+  min-height: 34px;
+  width: 100%;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.comments-area .comment-form #submit {
+  background-color: #222;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

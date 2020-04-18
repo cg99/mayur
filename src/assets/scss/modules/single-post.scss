@@ -1,20 +1,31 @@
-// responsive single post
-
+//single post
+.single-content{
+    display: flex;
+    background-color: #fff;
+}
 // grid area names
 .single-post {
     figure{
         grid-area: img;
+        width: 700px;
         margin: 0;
+        img{
+            width: inherit;
+        }
     }
     .single-post-title{
         grid-area: title;
+        font-size: 36px;
+        font-weight: 400;
     }
     .single-post-date{
         grid-area: date;
         margin-right: 1rem;
+        font-size: 12px;
     }
     .single-content{
         grid-area: content;
+        display: block;
     }
 }
 // large screen (laptop and computer)
@@ -25,6 +36,63 @@
         'img'
         'date' 
         'content';
+    color: #222;
+    font-size: 15px;
+}
+
+.single-sidebar{
+    .bigyapan{
+        figure{
+            width: 350px;
+            img{
+                width: inherit;
+            }
+        }
+    }
+}
+
+.separator{
+    background-color: #ccc;
+    height: 1px;
+    margin: 2rem 0;
+}
+
+.other-posts{
+    display: flex;
+    .prev-post{
+        width: 48%;
+        margin-right: 2%;
+        div{
+            font-size: 12px;
+            color: #666;
+        }
+    }
+    .next-post{
+        width: 48%;
+        margin-left: 2%;
+        text-align: right;
+        div{
+            font-size: 12px;
+            color: #666;
+        }
+    }
+}
+
+.comments-area .comment-form{
+    #comment, #author, #email{
+        padding: 3px 9px;
+        min-height: 34px;
+        width: 100%;
+        font-size: 12px;
+        font-family: inherit;
+    }
+    #submit{
+        background-color: #222;
+        color: #fff;
+        padding: 8px 15px;
+        border: none;
+        cursor: pointer;
+    }
 }
 
 // medium screen (tablet)
