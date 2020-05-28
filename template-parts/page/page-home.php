@@ -1,34 +1,30 @@
 <div>
+<?php	
+	$k = 1;
+	for ($i = 1; $i <= 8; $i++) { 
+		get_template_part('template-parts/groups/group', $i);
+		?>
 
-	<?php get_template_part('template-parts/groups/group', '1'); ?> <!-- group 1 -->
+		<div class="adv-wrapper">
+			<?php for ($j = 1; $j <= 3; $j++) { ?>	
+			<div class="advertise" id="ad<?php echo $k; ?>">
+				<figure>
+					<img src="<?php echo get_theme_mod('home_ad_'.$k, 'default'); $k=$k+1; ?>">
+					<figcaption class="hidden">Advertisement</figcaption>     
+				</figure>
+			</div>
+			<?php } ?>
+		</div>
 
-
-	<?php get_template_part('template-parts/groups/group', '2'); ?> <!-- group 2 -->
-	
-
-	<?php get_template_part('template-parts/groups/group', '3'); ?> <!-- group 3 -->
-
-
-	<?php get_template_part('template-parts/groups/group', '4'); ?> <!-- group 4 -->
-
-
-	<?php get_template_part('template-parts/groups/group', '5'); ?> <!-- group 5 -->
-
-
-	<?php get_template_part('template-parts/groups/group', '6'); ?> <!-- group 6 -->
-
-
-	<?php get_template_part('template-parts/groups/group', '7'); ?> <!-- group 7 -->
-
-
-	<?php get_template_part('template-parts/groups/group', '8'); ?> <!-- group 8 -->
-
+		<?php	
+	}	
+?>
 
 
 	<!-- category post -->
 	<!-- <h2> Local</h2>
 	<div class="post-container">
-		<?php 
+		<?php /*
 		// pull 5 posts 
 			$cat = get_theme_mod('category_1');
 			$cat = get_category($cat);
@@ -48,10 +44,8 @@
 
 		<?php endwhile; wp_reset_postdata(); else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-		<?php endif; ?>
-	
+		<?php endif; */?>
+			
 	</div> -->
-
-	<hr>
 
 </div>

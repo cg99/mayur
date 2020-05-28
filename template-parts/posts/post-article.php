@@ -1,8 +1,10 @@
 
 		<article class="post">
-			<figure>
-				<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Featured">
-			</figure>
+			<a href="<?php the_permalink() ?>">
+				<figure>
+					<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Featured">
+				</figure>
+			</a>
 			<div class="post-details">
 				<h3 class="post-title">
 					<a href="<?php the_permalink() ?>">

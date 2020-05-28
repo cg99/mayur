@@ -58,7 +58,7 @@ $wp_customize->add_setting( 'category_1', array(
 
 $wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'category_1', array(
     'section'       => 'home_post_category',
-    'label'         => esc_html__( 'First Space', 'mayur' ),
+    'label'         => esc_html__( 'Featured Group', 'mayur' ),
     'description'   => esc_html__( 'Select the category that the slider will show posts from.', 'mayur' ),
     // Uncomment to pass arguments to wp_dropdown_categories()
     //'dropdown_args' => array(
@@ -74,8 +74,68 @@ $wp_customize->add_setting( 'category_2', array(
 
 $wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'category_2', array(
     'section'       => 'home_post_category',
-    'label'         => esc_html__( 'Second Space', 'mayur' ),
-    'description'   => esc_html__( 'Select the category that the slider will show posts from.', 'mayur' ),
+    'label'         => esc_html__( 'Second Group', 'mayur' ),
+    'description'   => esc_html__( 'Select the category.', 'mayur' ),
+) ) );
+
+//3rd posts by category
+$wp_customize->add_setting( 'category_3', array(
+    'default'           => 0,
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'category_3', array(
+    'section'       => 'home_post_category',
+    'label'         => esc_html__( 'Third Group', 'mayur' ),
+    'description'   => esc_html__( 'Select the category.', 'mayur' ),
+) ) );
+
+//4th posts by category
+$wp_customize->add_setting( 'category_4', array(
+    'default'           => 0,
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'category_4', array(
+    'section'       => 'home_post_category',
+    'label'         => esc_html__( 'Fourth Group', 'mayur' ),
+    'description'   => esc_html__( 'Select the category', 'mayur' ),
+) ) );
+
+//5th posts by category
+$wp_customize->add_setting( 'category_5', array(
+    'default'           => 0,
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'category_5', array(
+    'section'       => 'home_post_category',
+    'label'         => esc_html__( 'Fifth Group', 'mayur' ),
+    'description'   => esc_html__( 'Select the category.', 'mayur' ),
+) ) );
+
+//6th posts by category
+$wp_customize->add_setting( 'category_6', array(
+    'default'           => 0,
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'category_6', array(
+    'section'       => 'home_post_category',
+    'label'         => esc_html__( 'Sixth Group', 'mayur' ),
+    'description'   => esc_html__( 'Select the category.', 'mayur' ),
+) ) );
+
+//7th posts by category
+$wp_customize->add_setting( 'category_7', array(
+    'default'           => 0,
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'category_7', array(
+    'section'       => 'home_post_category',
+    'label'         => esc_html__( 'Seventh Group', 'mayur' ),
+    'description'   => esc_html__( 'Select the category.', 'mayur' ),
 ) ) );
 
 ?>

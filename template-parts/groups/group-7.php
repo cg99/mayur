@@ -1,15 +1,22 @@
-<!-- post group 7 -->
 
 <div class="group-container">
     <div class="group">
         <div class="group-heading" style="width: 350px;">
-            <h3>First</h3>
+            <h3>
+            <?php 
+                $cat = get_theme_mod('category_7');
+                $cat = get_category($cat);
+                $cat_post = $cat->name;  
+                echo $cat_post;
+            ?>
+            </h3>
         </div>
         <div class="post-group g7-a" id="group7">
             <?php 
-            // pull 3 posts 
+            // pull 3 posts                                                                                      
                 $args = array(
                     'post_type' => 'post',
+                    'category_name' => $cat_post,
                     'posts_per_page' => '3'
                 );
                 $query = new WP_Query( $args );

@@ -1,4 +1,3 @@
-<!-- post group 3 -->
 
 <div class="group-container">
     <div class="group">
@@ -7,7 +6,7 @@
         </div>
         <div class="post-group" id="group8">
             <?php 
-            // pull 6 posts 
+            // pull 6 posts                                                                                       
                 $args = array(
                     'post_type' => 'post',
                     'posts_per_page' => '10'

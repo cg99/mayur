@@ -1,11 +1,15 @@
-<!-- featured post group 1 -->
+
 <div class="group-container">
     <div class="group">
         <div class="post-group" id="group1">
             <?php 
             // pull 5 posts 
+                $cat = get_theme_mod('category_1');
+                $cat = get_category($cat);
+                $cat_post = $cat->name;
                 $args = array(
                     'post_type' => 'post',
+                    'category_name' => $cat_post,
                     'posts_per_page' => '4'
                 );
                 $query = new WP_Query( $args );

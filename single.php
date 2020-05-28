@@ -32,7 +32,37 @@
 								<div class="next-post">
 									<?php next_post_link( '<div>Next </div><strong>%link</strong>' ); ?> 
 								</div>
-							</div>	
+							</div>
+							
+							<!-- post group 4 -->
+							<div class="group-container">
+								<div class="group">
+									<div class="group-heading">
+										<h3>Related News</h3>
+									</div>
+									<div class="post-group" id="group4">
+										<?php 
+										// pull 3 posts 
+											$args = array(
+												'post_type' => 'post',
+												'posts_per_page' => '3'
+											);
+											$query = new WP_Query( $args );
+										?>
+										
+										<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+
+											<?php get_template_part('template-parts/posts/post', 'article'); ?>
+
+										<?php endwhile; wp_reset_postdata(); else: ?>
+										<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+										<?php endif; ?>
+									</div>
+								</div>
+							</div>
+
+							<div class="separator"></div>
+							
 							<div>
 								<?php
 								// If comments are open or we have at least one comment, load up the comment template.

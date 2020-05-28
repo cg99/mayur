@@ -28,7 +28,7 @@
   display: flex;
   justify-content: center;
   background-color: #fff;
-  padding: 38px 0;
+  padding: 10px 0;
 }
 
 .main-content div.post-container {
@@ -112,6 +112,10 @@
   margin: 5px;
 }
 
+.adv-wrapper {
+  display: flex;
+}
+
 .advertise figure {
   margin-right: auto;
   width: -webkit-fit-content;
@@ -121,7 +125,7 @@
 
 .advertise figure img {
   height: auto;
-  width: 720px;
+  width: 300px;
 }
 
 * {
@@ -142,7 +146,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #333;
 }
 
 .navigation {
@@ -164,7 +168,6 @@ a {
 .grid-container {
   display: grid;
   grid-template-areas: "head" "main" "foot";
-  grid-gap: 5px;
 }
 
 .hidden {
@@ -873,12 +876,12 @@ a {
 .single-post {
   display: grid;
   grid-template-areas: "title" "img" "date" "content";
-  color: #222;
+  color: #333;
   font-size: 15px;
 }
 
 .single-sidebar .bigyapan figure {
-  width: 350px;
+  width: 325px;
 }
 
 .single-sidebar .bigyapan figure img {
@@ -934,6 +937,72 @@ a {
   cursor: pointer;
 }
 
+.comment-list {
+  list-style: none;
+}
+
+.comment-list .comment {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.comment-list .comment ul.children li {
+  list-style: none;
+}
+
+.comment-list .comment ul.children li br {
+  display: none;
+}
+
+.comment-list .comment-author {
+  display: inline;
+}
+
+.comment-list .comment-author img {
+  margin-bottom: -2rem;
+}
+
+.comment-list .comment-author cite.fn {
+  text-transform: capitalize;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  font-style: normal;
+  padding-left: 12px;
+}
+
+.comment-list .comment-author .says {
+  display: none;
+}
+
+.comment-list .comment-meta {
+  display: inline;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.comment-list .comment-meta a {
+  color: #aaa;
+}
+
+.comment-list p {
+  margin: 5px 0;
+}
+
+.comment-list p,
+.comment-list .reply {
+  margin-left: 50px;
+  padding-left: 12px;
+}
+
+.comment-list .reply {
+  font-size: 12px;
+}
+
+.comment-list .reply a {
+  color: #aaa;
+}
+
 @media (max-width: 768px) {
   .single-post {
     grid-template-areas: "title" "date" "img" "content";
@@ -980,6 +1049,10 @@ a {
   color: #666;
 }
 
+.post:hover .post-details .post-title a {
+  text-decoration: underline;
+}
+
 .group-heading {
   border-bottom: 3px solid #005fcc;
   margin: 2rem 0;
@@ -993,6 +1066,7 @@ a {
   width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 0;
+  text-transform: capitalize;
 }
 
 #group1 .post:first-child {
@@ -1477,7 +1551,7 @@ a {
 #group4 .post .post-details .post-category {
   position: absolute;
   left: 0;
-  bottom: 46px;
+  top: 150px;
   text-transform: capitalize;
   margin: 0;
 }
@@ -1873,7 +1947,7 @@ a {
 #group8 .post .post-details .post-category {
   position: absolute;
   left: -5px;
-  bottom: 82px;
+  top: 179px;
   text-transform: capitalize;
 }
 

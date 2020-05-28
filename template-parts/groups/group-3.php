@@ -1,15 +1,22 @@
-<!-- post group 3 -->
 
 <div class="group-container">
     <div class="group">
         <div class="group-heading">
-            <h3>Local News</h3>
+            <h3>
+            <?php 
+                $cat = get_theme_mod('category_3');
+                $cat = get_category($cat);
+                $cat_post = $cat->name;  
+                echo $cat_post;
+            ?>
+            </h3>
         </div>
         <div class="post-group" id="group3">
             <?php 
-            // pull 6 posts 
+            // pull 6 posts                                                                                      
                 $args = array(
                     'post_type' => 'post',
+                    'category_name' => $cat_post,
                     'posts_per_page' => '6'
                 );
                 $query = new WP_Query( $args );

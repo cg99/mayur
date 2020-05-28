@@ -10782,17 +10782,18 @@ function () {
       } // for fixed navbar
 
 
-      var navLoc = navbar.offsetTop;
+      var navLoc = this.navbar.offsetTop;
       var menuStyle = this.navbar.currentStyle || window.getComputedStyle(this.navbar); // get css properties
 
       var menuMarginBottom = parseInt(menuStyle.marginBottom);
 
       if (window.pageYOffset > navLoc) {
+        var originalNavLoc = navLoc;
         this.navbar.classList.add('sticky');
         this.trending.style.paddingTop = "".concat(this.navbar.offsetHeight + menuMarginBottom, "px");
       } else {
         this.navbar.classList.remove('sticky');
-        this.trending.style.paddingTop = "0";
+        this.trending.style.paddingTop = '0';
       }
     }
   }, {

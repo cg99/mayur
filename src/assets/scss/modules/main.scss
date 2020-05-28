@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     background-color: #fff;
-    padding: 38px 0;
+    padding: 10px 0;
     div.post-container{
         display: inline-grid;
         grid-template-areas:
@@ -91,13 +91,16 @@
 
 
 //advertisement
+.adv-wrapper{
+    display: flex;
+}
 .advertise {
     figure{
         margin-right: auto;
         width: fit-content;
         img{
             height: auto;
-            width: 720px;
+            width: 300px;
         }
     }
 }

@@ -36,14 +36,14 @@
         'img'
         'date' 
         'content';
-    color: #222;
+    color: #333;
     font-size: 15px;
 }
 
 .single-sidebar{
     .bigyapan{
         figure{
-            width: 350px;
+            width: 325px;
             img{
                 width: inherit;
             }
@@ -92,6 +92,48 @@
         padding: 8px 15px;
         border: none;
         cursor: pointer;
+    }
+}
+
+.comment-list{
+    list-style: none;
+    .comment{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        ul.children li{
+            list-style: none;
+            br{display: none;}
+        }
+    }
+    .comment-author{
+        display: inline;
+        img{margin-bottom: -2rem;}
+        cite.fn{
+            text-transform: capitalize;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: 600;
+            font-style: normal;
+            padding-left: 12px;
+        }
+        .says{display: none;}
+    }
+    .comment-meta{
+        display: inline;
+        font-size: 12px;
+        padding-left: 10px;
+        a{color: #aaa;}
+    }
+    p{
+        margin: 5px 0;
+    }
+    p, .reply{
+        margin-left: 50px;
+        padding-left: 12px;
+    }
+    .reply{
+        font-size: 12px;
+        a{color: #aaa;}
     }
 }
 

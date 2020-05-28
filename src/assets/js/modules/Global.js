@@ -52,7 +52,6 @@ class Global {
 		this.btnNav.addEventListener('click', this.toggleNav.bind(this));
 		this.btnNavClose.addEventListener('click', this.toggleNav.bind(this));
 
-
 		this.btnDropDown = this.mobileMenu.querySelector('.menu-item-has-children span'); 
 		this.btnDropDown.addEventListener('click', this.toggleDropDownMenu.bind(this));
 	}
@@ -67,16 +66,17 @@ class Global {
 		}
 
 		// for fixed navbar
-		const navLoc = navbar.offsetTop;
+		const navLoc = this.navbar.offsetTop;
 		const menuStyle = this.navbar.currentStyle || window.getComputedStyle(this.navbar); // get css properties
 		const menuMarginBottom = parseInt(menuStyle.marginBottom);
 		if (window.pageYOffset > navLoc) {
+			var originalNavLoc = navLoc;
 			this.navbar.classList.add('sticky');
 			this.trending.style.paddingTop = `${this.navbar.offsetHeight + menuMarginBottom}px`;
 		} 
 		else {
 			this.navbar.classList.remove('sticky');
-			this.trending.style.paddingTop = `0`;
+			this.trending.style.paddingTop = '0';
 		}
 	}
 

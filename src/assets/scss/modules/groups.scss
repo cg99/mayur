@@ -24,6 +24,9 @@ $gap: 5px;
         }
     }
 }
+.post:hover .post-details .post-title a{
+    text-decoration: underline;
+}
 
 .group-heading{
     border-bottom: 3px solid $blue;
@@ -34,6 +37,7 @@ $gap: 5px;
         color: white;
         width: fit-content;
         margin-bottom: 0;
+        text-transform: capitalize;
     }
     
 }
@@ -431,7 +435,7 @@ $gap: 5px;
             .post-category{
                 position: absolute;
                 left: 0;
-                bottom: 46px;
+                top: 150px;
                 text-transform: capitalize;
                 margin: 0;
                 span{
@@ -770,7 +774,7 @@ $gap: 5px;
             .post-category{
                 position: absolute;
                 left: -5px;
-                bottom: 82px;
+                top: 179px;
                 text-transform: capitalize;
                 span{
                     background-color: #444;

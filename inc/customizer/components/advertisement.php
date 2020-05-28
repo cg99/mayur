@@ -6,15 +6,17 @@ $wp_customize->add_section('advertisement', array(
     'priority' => 101
 ));
 
-// homepage ads
-$wp_customize->add_setting('home_ads', array(
-    'default' => get_bloginfo('template_directory').'/dist/img/a.gif',
-    'type' => 'theme_mod'
-));
-$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'home_ads', array(
-    'label' => __('Body Top Banner', 'mayur'),
-    'section' => 'advertisement',
-    'settings' => 'home_ads',
-    'priority' => 3
-)));
+// homepage ad 1
+for($i = 1; $i <= 24; $i++){
+    $wp_customize->add_setting('home_ad_'.$i, array(
+        'default' => get_bloginfo('template_directory').'/dist/img/a.gif',
+        'type' => 'theme_mod'
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'home_ad_'.$i, array(
+        'label' => __('Advertisement '.$i, 'mayur'),
+        'section' => 'advertisement',
+        'settings' => 'home_ad_'.$i,
+        'priority' => 0 + $i
+    )));
+}
 ?>
