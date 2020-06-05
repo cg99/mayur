@@ -7,11 +7,11 @@
     </div>
     <!-- header img / advertisement -->
     <div class="wrapper" style="margin-left: auto">
-        <section class="advertise">
-            <figure>
+        <div class="header-ad">
+            <figure style="margin: 0;">
                 <img src="<?php echo get_theme_mod('header', 'default'); ?>">
                 <figcaption class="hidden">Advertisement</figcaption>     
             </figure>
-        </section>
+        </div>
     </div>
 </div>

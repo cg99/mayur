@@ -10,7 +10,7 @@
 					<p><a href="#">SEVENTH NATIONAL GAME 2076</a></p>
 				</div>
 			</div>
-			<div class="col" style="display:flex;justify-content:center">
+			<div class="col">
 				<div>
 					<h2>Our Team</h2>
 					<p><a href="#">About Us</a></p>
@@ -29,7 +29,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col" style="display:flex;justify-content:flex-end">
+			<div class="col">
 				<div class="wrapper">
 					<h2>Contact</h2>
 					<div>

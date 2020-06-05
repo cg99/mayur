@@ -149,5 +149,30 @@ require get_theme_file_path('/inc/posts-route.php');
 		return $fields;
 	}
 	add_filter('comment_form_default_fields', 'remove_website_field');
+
+	// add other panels in customizer
+	add_theme_support( 'custom-header' );
+	add_theme_support( 'custom-background' );
+
+	// login page custom css
+	// for creating custom url in logo of login page
+	function loginHeaderURL()
+	{
+		return esc_url(site_url('/'));
+	}
+	// for adding css in login page
+	function loginCSS()
+	{
+		wp_enqueue_style( 'mayur_stylesheet', get_stylesheet_uri() );
+		wp_enqueue_style( 'google_fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i' );
+	}
+	// for changing main title of login page
+	function loginTitle()
+	{
+		return get_bloginfo('name');
+	}
+	add_filter( 'login_headerurl', 'loginHeaderURL' );
+	add_action('login_enqueue_scripts', 'loginCSS');
+	add_filter( 'login_headertext', 'loginTitle' );
 	
 ?>

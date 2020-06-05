@@ -11,3 +11,36 @@ Tags: one-column, two-columns, custom-menu, featured-images, microformats, stick
 Text Domain: mayur
 
 */
+
+/* Customize Login Screen */
+  body.login .button-primary {
+    background-color: #F95738;
+    border-color: rgb(224, 84, 56);
+    text-shadow: 0 -1px 1px rgb(212, 82, 56),1px 0 1px rgb(212, 82, 56),0 1px 1px rgb(212, 82, 56),-1px 0 1px rgb(212, 82, 56);
+    box-shadow: 0 1px 0 rgb(199, 80, 56);
+  }
+  
+  body.login .button-primary:hover,
+  body.login .button-primary:active,
+  body.login .button-primary:focus {
+    background-color: rgb(232, 85, 56);
+    border-color: rgb(212, 82, 56);
+    text-shadow: 0 -1px 1px rgb(199, 80, 56),1px 0 1px rgb(199, 80, 56),0 1px 1px rgb(199, 80, 56),-1px 0 1px rgb(199, 80, 56);
+    box-shadow: 0 1px 0 rgb(186, 78, 56);
+  }
+  
+  body.login {
+    background-color: #FAF0CA;
+  }
+  
+  .login h1 a {
+    color: #0D3B66;
+    font-size: 30px;
+    font-weight: 300;
+    background-image: none;
+    width: auto;
+    height: auto;
+    text-indent: 0;
+  }
+  
+  

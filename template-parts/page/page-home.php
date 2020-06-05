@@ -6,7 +6,7 @@
 		?>
 
 		<div class="adv-wrapper">
-			<?php for ($j = 1; $j <= 3; $j++) { ?>	
+			<?php for ($j = 1; $j <= 2; $j++) { ?>	
 			<div class="advertise" id="ad<?php echo $k; ?>">
 				<figure>
 					<img src="<?php echo get_theme_mod('home_ad_'.$k, 'default'); $k=$k+1; ?>">

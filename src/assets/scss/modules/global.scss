@@ -103,3 +103,25 @@ a {
     }
   }
 }
+
+// custom scrollbar
+::-webkit-scrollbar-track
+{
+  // border-right: 4px solid white;
+	// border-left: 4px solid white;
+	// border color does not support transparent on scrollbar
+	// border-color: transparent;
+	background-color: #d8d8d8;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #eee;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #005fcc;
+	// border-radius: 10px;
+}

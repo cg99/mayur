@@ -6,7 +6,7 @@
 		      		<!-- banner advertisement -->
 		      		<?php // get_template_part('template-parts/ads/ads', 'banner');?>
 
-			      	<section class="single-content">
+			      	<section class="single-container">
 				  		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<article class="single-post">
 							<figure>

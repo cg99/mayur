@@ -17,6 +17,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     margin-bottom: 1rem;
+    .col{
+      display: flex;
+      justify-content: center;
+    }
+    .col:first-child{
+      justify-content: flex-start;
+    }
+    .col:last-child{
+      justify-content: flex-end;
+    }
 	}
 	.footer-bottom{
     display: flex;
