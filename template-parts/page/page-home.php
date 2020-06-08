@@ -6,14 +6,21 @@
 		?>
 
 		<div class="adv-wrapper">
-			<?php for ($j = 1; $j <= 2; $j++) { ?>	
-			<div class="advertise" id="ad<?php echo $k; ?>">
-				<figure>
-					<img src="<?php echo get_theme_mod('home_ad_'.$k, 'default'); $k=$k+1; ?>">
-					<figcaption class="hidden">Advertisement</figcaption>     
-				</figure>
-			</div>
-			<?php } ?>
+			<?php for ($j = 1; $j <= 2; $j++) { 
+				$getExpiryDate = get_theme_mod('ad_expiry_date_'.$k, 'default');
+				
+				$expire = strtotime($getExpiryDate);
+				$today = strtotime(date("Y-m-d"));
+				
+				if($expire > $today) { ?>
+				<div class="advertise" id="ad<?php echo $k; ?>">
+					<figure>
+						<img src="<?php echo get_theme_mod('home_ad_'.$k, 'default'); $k=$k+1; ?>">
+						<figcaption class="hidden">Advertisement</figcaption>     
+					</figure>
+				</div>
+			<?php } 
+			} ?>
 		</div>
 
 		<?php	

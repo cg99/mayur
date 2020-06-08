@@ -6,9 +6,9 @@ class My_Dropdown_Category_Control extends WP_Customize_Control {
 
 	protected $dropdown_args = false;
 
-	protected function render_content() {
-		?><label><?php
-
+	protected function render_content() { ?>
+    <label>
+    <?php
 		if ( ! empty( $this->label ) ) :
 			?><span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span><?php
 		endif;
@@ -48,7 +48,7 @@ class My_Dropdown_Category_Control extends WP_Customize_Control {
 }
 
 $wp_customize->add_section( 'home_post_category', array(
-    'title' => esc_html_x( 'Home Post Category', 'customizer section title', 'mayur' ),
+    'title' => esc_html_x( 'Group Post Category', 'customizer section title', 'mayur' ),
 ) );
 
 $wp_customize->add_setting( 'category_1', array(
@@ -138,4 +138,77 @@ $wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'ca
     'description'   => esc_html__( 'Select the category.', 'mayur' ),
 ) ) );
 
+//8th posts by category
+$wp_customize->add_setting( 'category_8', array(
+    'default'           => 0,
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'category_8', array(
+    'section'       => 'home_post_category',
+    'label'         => esc_html__( 'Eight Group', 'mayur' ),
+    'description'   => esc_html__( 'Select the category.', 'mayur' ),
+) ) );
+
+
+
+//1st sidebar posts by category
+$wp_customize->add_setting( 'side_category_1', array(
+    'default'           => 0,
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'side_category_1', array(
+    'section'       => 'home_post_category',
+    'label'         => esc_html__( '1 Sidebar Group', 'mayur' ),
+    'description'   => esc_html__( 'Select the category.', 'mayur' ),
+) ) );
+
+//2nd sidebar posts by category
+$wp_customize->add_setting( 'side_category_2', array(
+    'default'           => 0,
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'side_category_2', array(
+    'section'       => 'home_post_category',
+    'label'         => esc_html__( '2 Sidebar Group', 'mayur' ),
+    'description'   => esc_html__( 'Select the category.', 'mayur' ),
+) ) );
+
+//3rd sidebar posts by category
+$wp_customize->add_setting( 'side_category_3', array(
+    'default'           => 0,
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'side_category_3', array(
+    'section'       => 'home_post_category',
+    'label'         => esc_html__( '3 Sidebar Group', 'mayur' ),
+    'description'   => esc_html__( 'Select the category.', 'mayur' ),
+) ) );
+
+//4th sidebar posts by category
+$wp_customize->add_setting( 'side_category_4', array(
+    'default'           => 0,
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'side_category_4', array(
+    'section'       => 'home_post_category',
+    'label'         => esc_html__( '4 Sidebar Group', 'mayur' ),
+    'description'   => esc_html__( 'Select the category.', 'mayur' ),
+) ) );
+
+//5th sidebar posts by category
+$wp_customize->add_setting( 'side_category_5', array(
+    'default'           => 0,
+    'sanitize_callback' => 'absint',
+) );
+
+$wp_customize->add_control( new My_Dropdown_Category_Control( $wp_customize, 'side_category_5', array(
+    'section'       => 'home_post_category',
+    'label'         => esc_html__( '5 Sidebar Group', 'mayur' ),
+    'description'   => esc_html__( 'Select the category.', 'mayur' ),
+) ) );
 ?>

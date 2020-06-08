@@ -44,6 +44,7 @@
 		)
 	));
 	
+	// set website colors
 	$wp_customize->add_section('site-colors', array(
         'title' => __('change site colors', 'mayur'),
         'panel' => 'site-settings',

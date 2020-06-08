@@ -34,7 +34,14 @@
     
     <div class="group-sidebar">
         <div class="group-heading">
-            <h3>More Posts</h3>
+            <h3>
+            <?php 
+                $cat = get_theme_mod('side_category_3');
+                $cat = get_category($cat);
+                $cat_post = $cat->name;  
+                echo $cat_post;
+            ?>
+            </h3>
         </div>
         <div class="sidebar">
             <div class="group6-sidebar">
@@ -43,6 +50,7 @@
                     // pull 3 posts 
                         $args = array(
                             'post_type' => 'post',
+                            'category_name' => $cat_post,
                             'posts_per_page' => '3'
                         );
                         $query = new WP_Query( $args );
@@ -57,12 +65,18 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="bigyapan">
-                <figure>
-                    <figcaption class="">- widget area -</figcaption>     
-                    <img src="<?php echo get_theme_file_uri(); ?>/dist/img/post_img.png" alt="Bigyapan">
-                </figure>
-           </div>
+            <?php
+                $getExpiryDate = get_theme_mod('ad_expiry_date_24', 'default');
+				$expire = strtotime($getExpiryDate);
+				$today = strtotime(date("Y-m-d"));
+				if($expire > $today) { ?>
+                <div class="bigyapan">
+                    <figure>
+                        <figcaption class="">- Advertisement -</figcaption>     
+                        <img src="<?php echo get_theme_mod('home_ad_24', 'default');?>" alt="Bigyapan">
+                    </figure>
+                </div>
+           <?php } ?>
         </div>
     </div>
 </div>

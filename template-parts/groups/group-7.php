@@ -34,13 +34,21 @@
 
     <div class="group">
         <div class="group-heading" style="width: 350px;">
-            <h3>Second</h3>
+            <h3>
+            <?php 
+                $cat = get_theme_mod('category_8');
+                $cat = get_category($cat);
+                $cat_post = $cat->name;  
+                echo $cat_post;
+            ?>
+            </h3>
         </div>
         <div class="post-group g7-b" id="group7">
             <?php 
             // pull 3 posts 
                 $args = array(
                     'post_type' => 'post',
+                    'category_name' => $cat_post,
                     'posts_per_page' => '3'
                 );
                 $query = new WP_Query( $args );
@@ -58,7 +66,14 @@
     
     <div class="group-sidebar">
         <div class="group-heading">
-            <h3>Post Links</h3>
+            <h3>
+            <?php 
+                $cat = get_theme_mod('side_category_4');
+                $cat = get_category($cat);
+                $cat_post = $cat->name;  
+                echo $cat_post;
+            ?>
+            </h3>
         </div>
         <div class="sidebar">
             <div class="post-group" id="group-text-only">
@@ -66,6 +81,7 @@
                 // pull 3 posts 
                     $args = array(
                         'post_type' => 'post',
+                        'category_name' => $cat_post,
                         'posts_per_page' => '3'
                     );
                     $query = new WP_Query( $args );

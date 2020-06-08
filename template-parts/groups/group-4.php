@@ -38,12 +38,18 @@
         </div>
         <div class="sidebar">
             <div></div>
-            <div class="bigyapan">
-                <figure>
-                    <figcaption class="">- widget area -</figcaption>     
-                    <img src="<?php echo get_theme_file_uri(); ?>/dist/img/post_img.png" alt="Bigyapan">
-                </figure>
-           </div>
+            <?php
+                $getExpiryDate = get_theme_mod('ad_expiry_date_23', 'default');
+				$expire = strtotime($getExpiryDate);
+				$today = strtotime(date("Y-m-d"));
+				if($expire > $today) { ?>
+                <div class="bigyapan">
+                    <figure>
+                        <figcaption class="">- Advertisement -</figcaption>     
+                        <img src="<?php echo get_theme_mod('home_ad_23', 'default');?>" alt="Bigyapan">
+                    </figure>
+                </div>
+           <?php } ?>
         </div>
     </div>
 </div>

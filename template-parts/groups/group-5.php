@@ -34,7 +34,14 @@
     
     <div class="group-sidebar">
         <div class="group-heading">
-            <h3>One Post</h3>
+            <h3>
+            <?php 
+                $cat = get_theme_mod('side_category_2');
+                $cat = get_category($cat);
+                $cat_post = $cat->name;  
+                echo $cat_post;
+            ?>
+            </h3>
         </div>
         <div class="sidebar">
             <div class="one-post">
@@ -43,6 +50,7 @@
                     // pull 1 posts 
                         $args = array(
                             'post_type' => 'post',
+                            'category_name' => $cat_post,
                             'posts_per_page' => '1'
                         );
                         $query = new WP_Query( $args );
