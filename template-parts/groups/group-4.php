@@ -34,7 +34,7 @@
     
     <div class="group-sidebar">
         <div class="group-heading">
-            <h3>Widget</h3>
+            <h3 style="padding: 0;margin-top: 55px;"></h3>
         </div>
         <div class="sidebar">
             <div></div>

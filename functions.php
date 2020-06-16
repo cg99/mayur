@@ -5,8 +5,6 @@ require get_theme_file_path('/inc/customizer/customizer.php');
 
 require get_theme_file_path('/inc/posts-route.php');
 
-// require get_theme_file_path('/inc/theme-options.php');
-
 
 	add_action( 'wp_enqueue_scripts', 'startingScript' );
 	function startingScript() {
@@ -19,6 +17,8 @@ require get_theme_file_path('/inc/posts-route.php');
 		wp_enqueue_style( 'css_app', get_stylesheet_directory_uri().'/dist/app.css', NULL, microtime() );
 
 		wp_enqueue_style( 'font_awesome', '//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
+
+		wp_enqueue_style( 'remix_icons', '//cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' );
 
 		// for nepali date
 		$cal = new Nepali_Calendar();
@@ -37,81 +37,27 @@ require get_theme_file_path('/inc/posts-route.php');
 	add_theme_support( 'post-thumbnails' );
 
 
-	// add_action( 'rest_api_init', 'add_field_to_JSON' );
-	// function add_field_to_JSON() {
-	// 	//Add featured image thumbnail
-	// 	register_rest_field( 
-	// 	    'post', // Where to add the field (Here, blog posts. Could be an array)
-	// 	    'featured_image_thumb', // Name of new field (You can call this anything)
-	// 	    array(
-	// 	        'get_callback'    => 'get_image_thumbnail',
-	// 	        'update_callback' => null,
-	// 	        'schema'          => null,
-	// 	    )
-	// 	);
-	// 	//Add featured image full size
-	// 	register_rest_field( 'post', 'featured_image_full', 
-	// 		array(
-	// 		'get_callback' => 'get_image_full' //leave the parameter empty
-	// 	    )
-	// 	);
-	// 	//Add category name
-	// 	register_rest_field( 'post', 'category_name', 
-	// 		array(
-	// 		'get_callback' => function() {return get_the_category();} //leave the parameter empty
-	// 	    ));
-	// 	//Add nepali date
-	// 	register_rest_field( 'post', 'npDate', 
-	// 		array(
-	// 		'get_callback' => 'get_post_np_date' //leave the parameter empty
-	// 	    )
-	// 	);
-	// }
-	// function get_image_thumbnail( $object, $field_name, $request ) {
-	//   	$feat_img_array = wp_get_attachment_image_src(
-	//     	$object['featured_media'], // Image attachment ID
-	//     	'medium',  // Size.  Ex. "thumbnail", "large", "full", etc..
-	//     	true // Whether the image should be treated as an icon.
-	//   	);
-	//   	return $feat_img_array[0];
-	// }
-	// function get_image_full( $object, $field_name, $request ) {
-	//   	$feat_img_array = wp_get_attachment_image_src(
-	//     	$object['featured_media'], // Image attachment ID
-	//     	'',  // Size.  Ex. "thumbnail", "large", "full", etc..
-	//     	false // Whether the image should be treated as an icon.
-	//   	);
-	//   	return $feat_img_array[0];
-	// }
-	// function get_post_np_date( $dt ) {
-	// 	$day = get_the_date("d");
-	// 	$month = get_the_date("m");
-	// 	$year = get_the_date("Y");
-
-	// 	$date = new Nepali_Calendar();
-
-	// 	$dt = $date->eng_to_nep($year, $month, $day);
-
-	//   	return $dt;
-	// }
- 
-
-
- /**
- * Register our sidebars and widgetized areas.
- *
- */
-	add_action( 'widgets_init', 'arphabet_widgets_init' );
-	function arphabet_widgets_init() {
+	/* add multiple widgets areas */
+	function widget_registration($name, $id, $description,$beforeWidget, $afterWidget, $beforeTitle, $afterTitle){
 		register_sidebar( array(
-			'name'          => 'Single right sidebar',
-			'id'            => 'single_right_1',
-			'before_widget' => '<div>',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="rounded">',
-			'after_title'   => '</h2>',
-		) );
+			'name' => $name,
+			'id' => $id,
+			'description' => $description,
+			'before_widget' => $beforeWidget,
+			'after_widget' => $afterWidget,
+			'before_title' => $beforeTitle,
+			'after_title' => $afterTitle,
+		));
 	}
+	
+	function multiple_widget_init(){
+		widget_registration('Sidebar Widget 1', 'sidebar-1', '', '', '', '<h3 class="widget-title">', '</h3>');
+		widget_registration('Footer widget 1', 'footer-sidebar-1', '', '', '', '<h2 class="footer-widget-title">', '</h2>');
+		widget_registration('Footer widget 2', 'footer-sidebar-2', '', '', '', '<h2 class="footer-widget-title">', '</h2>');
+		widget_registration('Footer widget 3', 'footer-sidebar-3', '', '', '', '<h2 class="footer-widget-title">', '</h2>');
+	}
+	
+	add_action('widgets_init', 'multiple_widget_init');
 
 
 	// live preview for cutomizer
@@ -127,6 +73,7 @@ require get_theme_file_path('/inc/posts-route.php');
 		);
 	}
 
+
 	// navigation menu
 	add_action( 'init', 'register_head_menus' );
 	function register_head_menus() {
@@ -135,13 +82,15 @@ require get_theme_file_path('/inc/posts-route.php');
 			'header-menu' => __( 'Header Menu' ),
 		   )
 		 );
-	   }
+	}
+
 
 	// excerpt length
 	function wpdocs_custom_excerpt_length( $length ) {
 		return 32;
 	}
 	add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
 
 	// remove url comment field
 	function remove_website_field($fields) {
@@ -150,9 +99,11 @@ require get_theme_file_path('/inc/posts-route.php');
 	}
 	add_filter('comment_form_default_fields', 'remove_website_field');
 
+
 	// add other panels in customizer
 	add_theme_support( 'custom-header' );
 	add_theme_support( 'custom-background' );
+
 
 	// login page custom css
 	// for creating custom url in logo of login page
@@ -160,12 +111,14 @@ require get_theme_file_path('/inc/posts-route.php');
 	{
 		return esc_url(site_url('/'));
 	}
+
 	// for adding css in login page
 	function loginCSS()
 	{
 		wp_enqueue_style( 'mayur_stylesheet', get_stylesheet_uri() );
 		wp_enqueue_style( 'google_fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i' );
 	}
+
 	// for changing main title of login page
 	function loginTitle()
 	{
@@ -174,5 +127,39 @@ require get_theme_file_path('/inc/posts-route.php');
 	add_filter( 'login_headerurl', 'loginHeaderURL' );
 	add_action('login_enqueue_scripts', 'loginCSS');
 	add_filter( 'login_headertext', 'loginTitle' );
+
 	
+	//1. Add a new form element...
+	add_action( 'register_form', 'myplugin_register_form' );
+	function myplugin_register_form() {
+
+		$first_name = ( ! empty( $_POST['first_name'] ) ) ? sanitize_text_field( $_POST['first_name'] ) : '';
+			
+			?>
+			<p>
+				<label for="first_name"><?php _e( 'First Name', 'mydomain' ) ?><br />
+					<input type="text" name="first_name" id="first_name" class="input" value="<?php echo esc_attr(  $first_name  ); ?>" size="25" /></label>
+			</p>
+			<?php
+		}
+
+		//2. Add validation. In this case, we make sure first_name is required.
+		add_filter( 'registration_errors', 'myplugin_registration_errors', 10, 3 );
+		function myplugin_registration_errors( $errors, $sanitized_user_login, $user_email ) {
+			
+			if ( empty( $_POST['first_name'] ) || ! empty( $_POST['first_name'] ) && trim( $_POST['first_name'] ) == '' ) {
+			$errors->add( 'first_name_error', sprintf('<strong>%s</strong>: %s',__( 'ERROR', 'mydomain' ),__( 'You must include a first name.', 'mydomain' ) ) );
+
+			}
+
+			return $errors;
+		}
+
+		//3. Finally, save our extra registration user meta.
+		add_action( 'user_register', 'myplugin_user_register' );
+		function myplugin_user_register( $user_id ) {
+			if ( ! empty( $_POST['first_name'] ) ) {
+				update_user_meta( $user_id, 'first_name', sanitize_text_field( $_POST['first_name'] ) );
+			}
+		}
 ?>

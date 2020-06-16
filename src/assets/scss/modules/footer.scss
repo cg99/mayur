@@ -1,5 +1,6 @@
 @import './variables.scss';
 
+
 .footer-top, .footer-bottom{
   @include box-layout;
   a, p{
@@ -9,6 +10,7 @@
     text-decoration: underline;
   }
 }
+
 
 .footer{
 	background-color: $black;
@@ -35,15 +37,13 @@
 	}
 }
 
+
 .social-links {
-  // background-color: gray;
-  // height: 24px;
-  // padding: 8px;
-  // border-radius: 4px;
   width: fit-content;
   a{
     height: inherit;
     padding-right: 6px;
+    font-size: 26px;
     img{
       width: 24px;
       filter: invert(0.9);
@@ -51,6 +51,27 @@
   }
 }
 
+
+.footer {
+	.footer-top {
+    .wrapper {
+      h2 {
+        border-bottom: 2px solid #666;
+        margin-bottom: 5px;
+      }
+      ul {
+        padding: 0;
+        ul {
+          list-style: none;
+          padding: 0;
+          li {
+            margin: 2px 0;
+          }
+        }
+      }
+    }
+  }
+}
 
 
 // scroll to top button
@@ -71,9 +92,11 @@
   transition: bottom 0.2s ease-in-out;
 }
 
+
 #topBtn img{
 	width: 40px;
 }
+
 
 #topBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */

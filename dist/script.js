@@ -10782,6 +10782,7 @@ function () {
       } // for fixed navbar
 
 
+      var wpAminBar = document.getElementById('wpadminbar');
       var navLoc = this.navbar.offsetTop;
       var menuStyle = this.navbar.currentStyle || window.getComputedStyle(this.navbar); // get css properties
 
@@ -10791,6 +10792,12 @@ function () {
         var originalNavLoc = navLoc;
         this.navbar.classList.add('sticky');
         this.trending.style.paddingTop = "".concat(this.navbar.offsetHeight + menuMarginBottom, "px");
+
+        if (!wpAminBar) {
+          this.navbar.style.top = '0';
+        } else {
+          this.navbar.style.top = '32px';
+        }
       } else {
         this.navbar.classList.remove('sticky');
         this.trending.style.paddingTop = '0';
@@ -10880,6 +10887,14 @@ function () {
         this.gridContainer.style.transform = 'scale(0.9)';
         this.gridContainer.style.marginTop = '6%';
         document.body.style.overflow = 'hidden';
+        var wpAminBar = document.getElementById('wpadminbar');
+
+        if (!wpAminBar) {
+          // if there is admin bar offset the menu
+          this.mobileMenu.style.top = '0';
+        } else {
+          this.mobileMenu.style.top = '46px';
+        }
       }
 
       this.showMenu = !this.showMenu;
@@ -10887,7 +10902,7 @@ function () {
   }, {
     key: "toggleDropDownMenu",
     value: function toggleDropDownMenu() {
-      this.dropRotate = this.mobileMenu.querySelector('.mobile-menu_items .fa');
+      this.dropRotate = this.mobileMenu.querySelector('.mobile-menu_items i');
 
       if (this.showDropMenu) {
         this.subMenu.style.display = 'none';
@@ -10993,7 +11008,7 @@ function () {
           this.month = "जेठ";
           break;
 
-        case "Asadh":
+        case "Ashad":
           this.month = "असार";
           break;
 

@@ -30,7 +30,7 @@ $gap: 5px;
 
 .group-heading{
     border-bottom: 3px solid $blue;
-    margin: 2rem 0;
+    margin: 2rem 0 5px;
     h3{
         background-color: $blue;
         padding: 4px 8px;
@@ -38,6 +38,7 @@ $gap: 5px;
         width: fit-content;
         margin-bottom: 0;
         text-transform: capitalize;
+        // height: 29px;
     }
     
 }
@@ -129,6 +130,7 @@ $gap: 5px;
     }
 }
 
+
 .group-container{
     display: flex;
     justify-content: center;
@@ -193,7 +195,7 @@ $gap: 5px;
             .post-category{
                 position: absolute;
                 left: -5px;
-                top: -27px;
+                top: -28px;
                 text-transform: capitalize;
                 span{
                     background-color: #444;
@@ -251,6 +253,7 @@ $gap: 5px;
         } 
     }
 }
+
 
 #group3 {
     .post:first-child{
@@ -317,7 +320,7 @@ $gap: 5px;
             .post-category{
                 position: absolute;
                 left: -5px;
-                top: -27px;
+                top: -28px;
                 text-transform: capitalize;
                 span{
                     background-color: #444;
@@ -334,6 +337,7 @@ $gap: 5px;
         }
     }
 }
+
 
 .sidebar .post-block{
     .post:first-child{grid-area: block1}
@@ -400,6 +404,7 @@ $gap: 5px;
         }
     }
 }
+
 
 #group4{
     .post:first-child{grid-area: g4-a}
@@ -476,6 +481,7 @@ $gap: 5px;
         }
     }
 }
+
 
 #group6{
     .post:first-child{grid-area: g6-a}
@@ -618,6 +624,7 @@ $gap: 5px;
         } 
     }
 }
+
 
 .g7-a {
     .post:first-child{
@@ -774,7 +781,7 @@ $gap: 5px;
             .post-category{
                 position: absolute;
                 left: -5px;
-                top: 179px;
+                top: 177px;
                 text-transform: capitalize;
                 span{
                     background-color: #444;
@@ -808,8 +815,8 @@ $gap: 5px;
         width: 380px;
         figure{
             margin: 0;
-            width: 120px;
-            height: 90px;
+            width: 130px;
+            height: 100px;
             // overflow: hidden;
         } 
         .post-details{

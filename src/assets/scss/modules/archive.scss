@@ -1,10 +1,19 @@
-.container-archive {
-    .archive-post {
-        display: flex;
-        figure {
-            width: 300px;
-            img {
-                width: inherit;
+
+
+.category-page-main {
+    display: flex;
+    .main-content {
+        padding: 0 20px 10px 20px;
+        .post {
+            width: 340px;
+            figure{
+                width: 340px;
+            }
+        }
+        .group-heading {
+            margin: 10px 0;
+            h3 {
+                margin: 0;
             }
         }
     }

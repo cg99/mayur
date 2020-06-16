@@ -117,7 +117,7 @@
 		a{
 			color: inherit;
 			display: block;
-			line-height: 40px;
+			line-height: 38px;
 			padding: 0 15px;
 			text-transform: capitalize;
 			// height: 30px;
@@ -151,7 +151,8 @@
 				ul{
 					display: none; /* hide all sub menus from view */
 					position: absolute;
-					top: 40px; /* this should be the same height as the top level menu -- height + padding + borders */	
+					z-index: 99;
+					top: 39px; /* this should be the same height as the top level menu -- height + padding + borders */	
 					li{
 						float: none; /* overwriting our float up above */
 						width: 150px;
@@ -174,7 +175,7 @@
 			}
 	    }
 	    .search{
-	    	margin: auto;
+	    	margin: 0 auto;
     		margin-right: inherit;
 	    }
 	}
@@ -203,19 +204,24 @@
 				}
  			}
 		}
-		.switch-button{
+		.switch-button {
 			display: inline-block;
 			margin: auto;
 			margin-right: 0;
 			color: #000;
 			cursor: pointer;
-			span{
-				i{
-					border: 1px solid #ddd;
+			span {
+				i {
+					// border: 1px solid #ddd;
 					float: left;
-					padding: 2px 4px;
-					color: $black;
+					// padding: 2px 4px;
+					font-size: 20px;
+					font-weight: bold;
+					color: #666;
 					border-radius: 2px;
+				}
+				i:hover {
+					color: #222;
 				}
 			}
 		}
@@ -228,11 +234,11 @@
 .menu-item-has-children span {
 	padding-left: 2px;
 }
-.menu-item-has-children span > i{
+.menu-item-has-children span > i {
 	font-size: 10px;
 	transition: transform 0.1s ease;
 }
-.menu .menu-item-has-children:hover > a span i{
+.menu .menu-item-has-children:hover > a span i {
 	transform: rotate(180deg);
 }
 

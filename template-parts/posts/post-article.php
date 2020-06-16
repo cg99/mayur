@@ -1,8 +1,15 @@
-
+	
 		<article class="post">
 			<a href="<?php the_permalink() ?>">
 				<figure>
-					<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Featured">
+					<img src="<?php 
+						$pic = get_the_post_thumbnail_url();
+						if(!$pic) {
+							$site = get_template_directory_uri();
+							$pic = $site . '/dist/img/post_img.png';
+						}
+						echo $pic; 
+					?>" alt="thumbnail">
 				</figure>
 			</a>
 			<div class="post-details">
@@ -22,9 +29,10 @@
 					<?php 
 					$categories = get_the_category();
 					if($categories[0]->name !== 'Uncategorized'){ 
+						$count = 0;
 						foreach($categories as $category){ ?>
 						<span>
-							<?php echo $category->name; ?>
+							<?php echo $category->name; $count++ ; if($count > 5)  break; ?>
 						</span>
 					<?php } } ?>
 				</div>

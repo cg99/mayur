@@ -18,7 +18,7 @@
     <?php wp_reset_postdata(); ?>
     </ul>
     <div class="switch-button">
-        <span id="btnPrev"><i class="fa fa-chevron-left"></i></span>
-        <span id="btnNext"><i class="fa fa-chevron-right"></i></span>
+        <span id="btnPrev"><i class="ri-arrow-left-s-line"></i></span>
+        <span id="btnNext"><i class="ri-arrow-right-s-line"></i></span>
     </div>
 </div>

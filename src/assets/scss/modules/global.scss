@@ -1,11 +1,7 @@
 @import 'variables.scss';
 
-* {
+*, html {
   box-sizing: border-box;
-}
-
-html {
-	font-size: 100%;
 }
 
 body {
@@ -13,19 +9,23 @@ body {
 	background-color: #fff;
 	color: black;
 	font-family: $roboto;
-	line-height: 1.3;
+  line-height: 1.3;
+  font-size: 14px;
 }
+
 
 a {
   text-decoration: none;
   color: #333;
 }
 
+
 // grid layout
 .navigation { grid-area: head; }
 .app { grid-area: main; }
 .sidebar { grid-area: side }
 .footer { grid-area: foot; }
+
 
 .grid-container {
   display: grid;
@@ -37,15 +37,18 @@ a {
   // background-color: #eee;
 }
 
+
 @mixin grid-item-pad {
   // background-color: rgba(255, 255, 255, 0.8);
   padding: 10px;
 }
 
+
 // utility class
 .hidden{
   display: none;
 }
+
 
 .search-overlay {
   position: fixed;
@@ -104,6 +107,7 @@ a {
   }
 }
 
+
 // custom scrollbar
 ::-webkit-scrollbar-track
 {
@@ -125,3 +129,12 @@ a {
 	background-color: #005fcc;
 	// border-radius: 10px;
 }
+
+
+// sticky post
+.sticky {
+  background: #A2D9FD; 
+  // border: 3px solid black; 
+  padding: 10px;
+}
+

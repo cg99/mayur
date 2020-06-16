@@ -66,6 +66,7 @@ class Global {
 		}
 
 		// for fixed navbar
+		const wpAminBar = document.getElementById('wpadminbar');
 		const navLoc = this.navbar.offsetTop;
 		const menuStyle = this.navbar.currentStyle || window.getComputedStyle(this.navbar); // get css properties
 		const menuMarginBottom = parseInt(menuStyle.marginBottom);
@@ -73,11 +74,17 @@ class Global {
 			var originalNavLoc = navLoc;
 			this.navbar.classList.add('sticky');
 			this.trending.style.paddingTop = `${this.navbar.offsetHeight + menuMarginBottom}px`;
+			if (!wpAminBar) {
+				this.navbar.style.top = '0';
+			} else {
+				this.navbar.style.top = '32px';
+			}
 		} 
 		else {
 			this.navbar.classList.remove('sticky');
 			this.trending.style.paddingTop = '0';
 		}
+		
 	}
 
 	scrollToTop() { //scroll to top
@@ -145,12 +152,19 @@ class Global {
 			this.gridContainer.style.transform = 'scale(0.9)';
 			this.gridContainer.style.marginTop = '6%';
 			document.body.style.overflow = 'hidden';
+
+			const wpAminBar = document.getElementById('wpadminbar'); 
+			if (!wpAminBar) { // if there is admin bar offset the menu
+				this.mobileMenu.style.top = '0';
+			} else {
+				this.mobileMenu.style.top = '46px';
+			}
 		}	
 		this.showMenu = !this.showMenu;	 
 	}
 
 	toggleDropDownMenu(){
-		this.dropRotate = this.mobileMenu.querySelector('.mobile-menu_items .fa');
+		this.dropRotate = this.mobileMenu.querySelector('.mobile-menu_items i');
 		if(this.showDropMenu) {
 			this.subMenu.style.display = 'none';
 			this.showDropMenu = false;

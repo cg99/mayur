@@ -53,7 +53,7 @@ class NepaliDate {
         case "Jestha":
             this.month = "जेठ";
             break;
-        case "Asadh":
+        case "Ashad":
             this.month = "असार";
             break;
         case "Shrawn":
