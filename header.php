@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="mob-menu">
-		<img class="mobile-menu_close" src="<?php echo get_theme_file_uri(); ?>/dist/img/close.png">	
+		<span class="mobile-menu_close"><i class="ri-close-circle-line"></i></span>
 		<?php 
 			wp_nav_menu(
 				array(

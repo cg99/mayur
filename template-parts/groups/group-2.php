@@ -40,19 +40,19 @@
             <div class="social-media">
                 <a href="#">
                     <figure>
-                        <img src="<?php echo get_theme_file_uri(); ?>/dist/img/icons/facebook_32.png" alt="facebook">
+                        <img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/facebook_32.png" alt="facebook">
                         <figcaption>8,000 Fans</figcaption>
                     </figure>
                     <span>Like</span>
                 </a>
                 <a href="#">
-                    <figure><img src="<?php echo get_theme_file_uri(); ?>/dist/img/icons/twitter_32.png" alt="twitter">
+                    <figure><img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/twitter_32.png" alt="twitter">
                         <figcaption>4,500 Followers</figcaption>
                     </figure>
                     <span>Follow</span>
                 </a>
                 <a href="#">
-                    <figure><img style="width: 32px;background: red;" src="<?php echo get_theme_file_uri(); ?>/dist/img/icons/youtube.svg" alt="youtube">
+                    <figure><img style="width: 32px;background: red;" src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/youtube.svg" alt="youtube">
                         <figcaption>5,500 Subscribers</figcaption>
                     </figure>
                     <span>Subscribe</span>

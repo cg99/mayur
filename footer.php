@@ -60,7 +60,7 @@
 			<i class="fa fa-search search-btn" aria-hidden="true"></i>
 		</div>
 		<div class="search-close">
-			<img class="search-overlay_close" src="<?php echo get_theme_file_uri(); ?>/dist/img/close.png">	
+			<img class="search-overlay_close" src="<?php echo get_template_directory_uri(); ?>/dist/img/close.png">	
 		</div>
 	</div>
 

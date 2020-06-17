@@ -1,6 +1,4 @@
 <?php 
-require get_theme_file_path('/inc/nepali_calendar/nepali_calendar.php');
-
 require get_theme_file_path('/inc/customizer/customizer.php');
 
 require get_theme_file_path('/inc/posts-route.php');
@@ -14,23 +12,12 @@ require get_theme_file_path('/inc/posts-route.php');
 
 		wp_enqueue_script( 'js_depend', get_theme_file_uri('/src/assets/js/dependencies/timeago.js'), NULL, microtime(), true );
 		
-		wp_enqueue_style( 'css_app', get_stylesheet_directory_uri().'/dist/app.css', NULL, microtime() );
+		wp_enqueue_style( 'css_app', get_template_directory_uri().'/dist/app.css', NULL, microtime() );
 
 		wp_enqueue_style( 'font_awesome', '//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 
 		wp_enqueue_style( 'remix_icons', '//cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' );
 
-		// for nepali date
-		$cal = new Nepali_Calendar();
-		$day = date("d");
-		$month = date("m");
-		$year = date("Y");
-
-		wp_localize_script( 'js_app', 'mayur', array(
-			'root_url' => get_site_url(),
-			'np_date' => $cal->eng_to_nep($year, $month, $day),
-			'nonce' => wp_create_nonce( 'wp_rest' )
-		));
 	}
 
 

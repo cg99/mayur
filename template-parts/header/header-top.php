@@ -5,7 +5,6 @@
         <a href="<?php echo get_theme_mod('socialTwitter'); ?>" class="twitter"><i class="ri-twitter-fill"></i></a>
     </div>
     <div class="date" id="topDate">
-        <p></p>
         <span><?php echo date(get_option('date_format')); ?></span>
     </div>
     <div class="link-right">

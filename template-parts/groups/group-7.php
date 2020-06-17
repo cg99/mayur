@@ -99,7 +99,7 @@
             <div class="bigyapan">
                 <figure>
                     <figcaption class="">- Advertisement -</figcaption>     
-                    <img src="<?php echo get_theme_file_uri(); ?>/dist/img/post_img.png" alt="Bigyapan">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/post_img.png" alt="Bigyapan">
                 </figure>
            </div>
         </div>
