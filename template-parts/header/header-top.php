@@ -10,9 +10,9 @@
     <div class="link-right">
         <div class="login-link">
         <?php if ( is_user_logged_in() ) { ?>
-            <a href="<?php echo wp_logout_url(); ?>"><i class="ri-logout-box-line"></i></a>
+            <a href="<?php echo wp_logout_url(); ?>" title="logout"><i class="ri-user-fill"></i></a>
         <?php } else { ?>
-            <a href="<?php echo wp_login_url(); ?>"><i class="ri-login-box-line"></i></a>
+            <a href="<?php echo wp_login_url(); ?>" title="login"><i class="ri-user-line"></i></a>
         <?php } ?>
         </div>
     </div>

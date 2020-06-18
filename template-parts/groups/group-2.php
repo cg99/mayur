@@ -7,6 +7,11 @@
                 $cat = get_theme_mod('category_2');
                 $cat = get_category($cat);
                 $cat_post = $cat->name;  
+
+                if (empty($cat_post)) { //check if category is set
+                    $cat_post = 'uncategorized';
+                }
+
                 echo $cat_post;
             ?>
             </h3>
@@ -37,27 +42,6 @@
             <h3>Stay Connected</h3>
         </div>
         <div class="sidebar">
-            <div class="social-media">
-                <a href="#">
-                    <figure>
-                        <img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/facebook_32.png" alt="facebook">
-                        <figcaption>8,000 Fans</figcaption>
-                    </figure>
-                    <span>Like</span>
-                </a>
-                <a href="#">
-                    <figure><img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/twitter_32.png" alt="twitter">
-                        <figcaption>4,500 Followers</figcaption>
-                    </figure>
-                    <span>Follow</span>
-                </a>
-                <a href="#">
-                    <figure><img style="width: 32px;background: red;" src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/youtube.svg" alt="youtube">
-                        <figcaption>5,500 Subscribers</figcaption>
-                    </figure>
-                    <span>Subscribe</span>
-                </a>
-            </div>
             <?php
                 $getExpiryDate = get_theme_mod('ad_expiry_date_21', 'default');
 				$expire = strtotime($getExpiryDate);

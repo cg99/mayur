@@ -34,10 +34,10 @@
 
 							<div class="other-posts">
 								<div class="prev-post">
-									<?php previous_post_link( '<div>Previous </div><strong>%link</strong>' ); ?> 
+									<?php previous_post_link( '<div><i class="ri-arrow-left-fill"></i> </div><strong>%link</strong>' ); ?> 
 								</div>
 								<div class="next-post">
-									<?php next_post_link( '<div>Next </div><strong>%link</strong>' ); ?> 
+									<?php next_post_link( '<div><i class="ri-arrow-right-fill"></i> </div><strong>%link</strong>' ); ?> 
 								</div>
 							</div>
 							

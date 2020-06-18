@@ -6,7 +6,7 @@
 	));
 	// header banner
 	$wp_customize->add_setting('header', array(
-		'default' => get_bloginfo('template_directory').'/dist/img/leaderboard.png',
+		'default' => get_bloginfo('template_directory').'/dist/img/mayur-ad.png',
 		'type' => 'theme_mod'
 	));
 	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'header', array(
@@ -18,7 +18,7 @@
 
     // logo
 	$wp_customize->add_setting('logo', array(
-		'default' => get_bloginfo('template_directory').'/dist/img/logo.png',
+		'default' => get_bloginfo('template_directory').'/dist/img/mayurlogo.png',
 		'type' => 'theme_mod'
 	));
 	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo', array(

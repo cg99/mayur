@@ -548,7 +548,7 @@ a {
 }
 
 .single-sidebar .wrapper #sidebar-one h3 {
-  color: #333;
+  color: #fff;
 }
 
 .sidebar .popular-post .post > a {
@@ -620,6 +620,10 @@ a {
   width: 24px;
   -webkit-filter: invert(0.9);
           filter: invert(0.9);
+}
+
+.social-links a:hover {
+  text-decoration: none;
 }
 
 .footer .footer-top .wrapper h2 {
@@ -779,7 +783,7 @@ a {
 }
 
 .other-posts .prev-post div {
-  font-size: 12px;
+  font-size: 20px;
   color: #666;
 }
 
@@ -790,7 +794,7 @@ a {
 }
 
 .other-posts .next-post div {
-  font-size: 12px;
+  font-size: 20px;
   color: #666;
 }
 
@@ -1119,22 +1123,6 @@ a {
 .group-container .group-sidebar {
   margin-left: 1rem;
   width: 100%;
-}
-
-.group-container .group-sidebar .sidebar .social-media a {
-  display: flex;
-  justify-content: space-between;
-  padding: 6px 0px;
-}
-
-.group-container .group-sidebar .sidebar .social-media a figure {
-  display: inherit;
-  align-items: center;
-  margin: 0;
-}
-
-.group-container .group-sidebar .sidebar .social-media a figure figcaption {
-  margin-left: 1rem;
 }
 
 .group-container .group-sidebar .sidebar .bigyapan figure {

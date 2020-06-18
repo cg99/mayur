@@ -38,7 +38,8 @@ require get_theme_file_path('/inc/posts-route.php');
 	}
 	
 	function multiple_widget_init(){
-		widget_registration('Sidebar Widget 1', 'sidebar-1', '', '', '', '<h3 class="widget-title">', '</h3>');
+		widget_registration('Sidebar Widget 1', 'sidebar-1', '', '', '', '<div class="group-heading">
+		<h3>', '</h3></div>');
 		widget_registration('Footer widget 1', 'footer-sidebar-1', '', '', '', '<h2 class="footer-widget-title">', '</h2>');
 		widget_registration('Footer widget 2', 'footer-sidebar-2', '', '', '', '<h2 class="footer-widget-title">', '</h2>');
 		widget_registration('Footer widget 3', 'footer-sidebar-3', '', '', '', '<h2 class="footer-widget-title">', '</h2>');
@@ -88,8 +89,8 @@ require get_theme_file_path('/inc/posts-route.php');
 
 
 	// add other panels in customizer
-	add_theme_support( 'custom-header' );
-	add_theme_support( 'custom-background' );
+	// add_theme_support( 'custom-header' );
+	// add_theme_support( 'custom-background' );
 
 
 	// login page custom css

@@ -17,16 +17,20 @@
 						</ul>
 					<?php } ?>
 				
-					<h2>Follow Us</h2>
+					<h2>Find Us</h2>
 					<div class="social-links">
 						<a href="<?php echo get_theme_mod('socialInstagram', 'https://www.instagram.com/um_es/'); ?>" id="socialInstagram">
-						<i class="ri-instagram-line"></i></a>
+							<img src="<?php echo get_theme_file_uri('/dist/img/icons/instagram.svg'); ?>">
+						</a>
 						<a href="<?php echo get_theme_mod('socialFacebook'); ?>" id="socialFacebook">
-						<i class="ri-facebook-box-line"></i></a>
+							<img src="<?php echo get_theme_file_uri('/dist/img/icons/facebook.svg'); ?>">
+						</a>
 						<a href="<?php echo get_theme_mod('socialYoutube'); ?>" id="socialYoutube">
-						<i class="ri-youtube-line"></i></a>
+							<img src="<?php echo get_theme_file_uri('/dist/img/icons/youtube.svg'); ?>">
+						</a>
 						<a href="<?php echo get_theme_mod('socialTwitter'); ?>" id="socialTwitter">
-						<i class="ri-twitter-line"></i></a>
+							<img src="<?php echo get_theme_file_uri('/dist/img/icons/twitter.svg'); ?>">
+						</a>
 					</div>
 				</div>
 			</div>
@@ -41,11 +45,11 @@
 			</div>
 		</div>
 		<div class="footer-bottom">
-			<div><p>Developed by: Umesh GM</p></div>
-			<div><p>mayurtheme.com.np | All rights reserved &copy; 2020</p></div>
+			<div><p>Developed by - <a href="https://www.facebook.com/Lafa.umes/">Umesh GM</a></p></div>
+			<div><p>Mayur WordPress Theme | All rights reserved &copy; <?php echo date("Y"); ?></p></div>
 
 			<button id="topBtn" title="Go to top">
-				<img src="<?php echo get_theme_file_uri('/dist/img/scroll to top.png'); ?>">
+				<img src="<?php echo get_theme_file_uri('/dist/img/icons/scroll to top.png'); ?>">
 			</button>
 			
 		</div>
@@ -60,7 +64,7 @@
 			<i class="fa fa-search search-btn" aria-hidden="true"></i>
 		</div>
 		<div class="search-close">
-			<img class="search-overlay_close" src="<?php echo get_template_directory_uri(); ?>/dist/img/close.png">	
+			<img class="search-overlay_close" src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/close.png">	
 		</div>
 	</div>
 

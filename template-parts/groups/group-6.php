@@ -7,6 +7,11 @@
                 $cat = get_theme_mod('category_6');
                 $cat = get_category($cat);
                 $cat_post = $cat->name;  
+
+                if (empty($cat_post)) { //check if category is set
+                    $cat_post = 'uncategorized';
+                }
+                
                 echo $cat_post;
             ?>
             </h3>
@@ -39,6 +44,11 @@
                 $cat = get_theme_mod('side_category_3');
                 $cat = get_category($cat);
                 $cat_post = $cat->name;  
+
+                if (empty($cat_post)) { //check if category is set
+                    $cat_post = 'uncategorized';
+                }
+
                 echo $cat_post;
             ?>
             </h3>
