@@ -20,7 +20,8 @@
 				</h3>
 
 				<div class="post-date">
-					<span>
+					<span style="display: flex">
+						<i class="ri-time-line" style="margin-right: 2px"></i>
 						<time class="timeago" datetime="<?php echo get_the_date('c') ?>"></time>
 					</span>
 				</div> 

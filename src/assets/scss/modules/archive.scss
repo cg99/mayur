@@ -1,9 +1,12 @@
 
-
 .category-page-main {
     display: flex;
+    padding-top: 10px;
     .main-content {
-        padding: 0 20px 10px 20px;
+        padding: 10px;
+        .group-container {
+            display: block;
+        }
         .post {
             width: 340px;
             figure{
@@ -16,5 +19,12 @@
                 margin: 0;
             }
         }
+    }
+}
+
+.pagination {
+    margin-top: 20px;
+    .page-numbers {
+        padding: 4px;
     }
 }

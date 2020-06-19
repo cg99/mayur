@@ -4,11 +4,25 @@
 			<div class="middle">
 			    <main class="main">
 		      		<!-- banner advertisement -->
-		      		<?php // get_template_part('template-parts/ads/ads', 'banner');?>
-
+		      							
 			      	<section class="single-container">
 				  		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<article class="single-post">
+
+							<div class="single-category">
+								<?php 
+					            $colors = array("#00b9eb", "#f44", "#ff8922", "#ee6f00", "#d00", "#008b8b", "#444", "#00ff7f");
+								$categories = get_the_category();
+								if($categories[0]->name !== 'Uncategorized'){ 
+									$count = 0;
+									foreach($categories as $category){ 
+									$color_num = rand(0, 7); ?>
+									<span style="background-color: <?php echo $colors[$color_num]; ?>">
+										<?php echo $category->name; $count++ ; if($count > 5)  break; ?>
+									</span>
+								<?php } } ?>
+							</div>
+
 							<figure class="single-featured-img">
 								<img src="<?php 
 									$pic = get_the_post_thumbnail_url();

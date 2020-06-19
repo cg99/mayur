@@ -14,6 +14,6 @@
         </div>
     </div>
     <?php 
-      echo "<div>".paginate_links()."</div>"; 
+      echo "<div class='pagination'>".paginate_links()."</div>"; 
     ?>
 </div>

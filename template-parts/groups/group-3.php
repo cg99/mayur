@@ -1,8 +1,12 @@
 
 <div class="group-container">
     <div class="group">
-        <div class="group-heading">
-            <h3>
+        <?php 	
+            $colors = array("#00b9eb", "#f44", "#ff8922", "#ee6f00", "#d00", "#008b8b", "#444", "#00ff7f");
+            $color_num = rand(0, 7);
+        ?>
+        <div class="group-heading" style="border-bottom-color: <?php echo $colors[$color_num]; ?>">
+            <h3 style="background-color: <?php echo $colors[$color_num]; ?>">
             <?php 
                 $cat = get_theme_mod('category_3');
                 $cat = get_category($cat);

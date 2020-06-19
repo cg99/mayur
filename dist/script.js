@@ -11123,9 +11123,11 @@ function () {
       fetch(url).then(function (response) {
         return response.json();
       }).then(function (data) {
-        // console.log(data);
-        _this2.resultsDiv.innerHTML = "\n\t\t\t\t\t<div>\n\t\t\t\t\t\t".concat(data.length ? '<ul>' : '<p>No matches found</p>', "\n\t\t\t\t\t\t\t").concat(data.map(function (item) {
-          return "<li>\n\t\t\t\t\t\t\t\t<a href=\"".concat(item.link, "\">").concat(item.title, "</a>\n\t\t\t\t\t\t\t\t</li>");
+        console.log(data);
+        _this2.resultsDiv.innerHTML = "\n\t\t\t\t\t<div>\n\t\t\t\t\t\t".concat(data.length ? '<ul>' : '<p>No matches found</p>', "\n                            ").concat(data.map(function (item) {
+          return "<li>\n                                <img src=\"".concat(item.featured_img, "\">\n                                <a href=\"").concat(item.link, "\">").concat(item.title, "\n                                    <p>").concat(item.category.map(function (cat) {
+            return "<span>".concat(cat.name, "</span>");
+          }).join(''), "</p>\n                                </a>\n\t\t\t\t\t\t\t</li>");
         }).join(''), "\n\t\t\t\t\t\t").concat(data.length ? '</ul>' : '', "\n\t\t\t\t\t</div>\n                ");
         _this2.isSpinning = false;
       })["catch"](function (err) {

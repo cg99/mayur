@@ -37,18 +37,6 @@
 					));  
 			    }
 			}
-			// img id
-			$imgId = get_post_thumbnail_id();
-
-			// for nepali date
-			// $day = get_the_date("d");
-			// $month = get_the_date("m");
-			// $year = get_the_date("Y");
-			// $date = new Nepali_Calendar();
-			// $dt = $date->eng_to_nep($year, $month, $day);
-
-			// get date of the post
-			$dt = get_the_date( 'Y-m-d' ) .'T'. get_the_time('H:i:s');
 
 			// store in the array
 			array_push($postResults, array(
@@ -57,7 +45,6 @@
 				'link' => get_the_permalink(),
 				'category' => $categoryResult,// category array from earlier
 				'featured_img' => get_the_post_thumbnail_url(), // get thumbnail
-				'date' => $dt
 			));
 		}
 

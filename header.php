@@ -35,7 +35,7 @@
 			<div class="main-nav">
 				<?php get_template_part('template-parts/header/header', 'nav');?>
 				
-				<?php if(get_theme_mod('ticker') == 'show') { ?>
+				<?php if(get_theme_mod('ticker') == 'show' && is_front_page()) { ?>
 
 					<?php get_template_part('template-parts/header/header', 'tick');?>
 

@@ -89,13 +89,18 @@ class Search{
         fetch(url)
             .then(response => response.json()) 
             .then(data => {
-                // console.log(data);
+                console.log(data);
                 this.resultsDiv.innerHTML = `
 					<div>
 						${data.length ? '<ul>' : '<p>No matches found</p>'}
-							${data.map(item => `<li>
-								<a href="${item.link}">${item.title}</a>
-								</li>`).join('')}
+                            ${data.map(item => `<li>
+                                <img src="${item.featured_img}">
+                                <a href="${item.link}">${item.title}
+                                    <p>${item.category.map(cat => 
+                                    `<span>${cat.name}</span>`
+                                    ).join('')}</p>
+                                </a>
+							</li>`).join('')}
 						${data.length ? '</ul>' : ''}
 					</div>
                 `;

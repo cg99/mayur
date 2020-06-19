@@ -2,11 +2,11 @@
 <?php	
 	$k = 1;
 	for ($i = 1; $i <= 8; $i++) { 
-		get_template_part('template-parts/groups/group', $i);
+		get_template_part('template-parts/groups/group', $i); // add post groups
 		?>
 
-		<div class="adv-wrapper">
-			<?php for ($j = 1; $j <= 2; $j++) { 
+		<div class="adv-wrapper"> 
+			<?php for ($j = 1; $j <= 2; $j++) { // adding advertisement
 				$getExpiryDate = get_theme_mod('ad_expiry_date_'.$k, 'default');
 				
 				$expire = strtotime($getExpiryDate);

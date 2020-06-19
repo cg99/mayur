@@ -3,9 +3,13 @@
     .wrapper {
         #sidebar-one {
             text-align: center;
-            h3 {
-                color: #fff;
-            }
+        }
+    }
+    .group-heading{
+        border-bottom-color: #444;
+        h3 {
+            color: #fff;
+            background-color: #444;
         }
     }
 }

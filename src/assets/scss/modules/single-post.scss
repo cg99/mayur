@@ -15,10 +15,22 @@
 .single-post {
     padding: 15px;
     // max-width: 700px;
+    .single-category{
+        grid-area: category;
+        font-size: 11px;
+        span {
+            color: #fff;
+            background-color: #444;
+            padding: 2px 4px;
+            margin: 0 1px;
+        }
+    }
+
     figure.single-featured-img{
         grid-area: img;
         max-width: 700px;
         margin: 0;
+        padding-bottom: 10px;
         img{
             width: inherit;
             max-width: inherit;
@@ -26,8 +38,9 @@
     }
     .single-post-title{
         grid-area: title;
-        font-size: 36px;
+        font-size: 32px;
         font-weight: 400;
+        margin: 10px 0;
     }
     .single-post-date{
         grid-area: date;
@@ -45,6 +58,7 @@
 .single-post {
     display: grid;
     grid-template-areas: 
+        'category'
         'title'
         'img'
         'date' 

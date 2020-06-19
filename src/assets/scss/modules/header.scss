@@ -202,6 +202,9 @@
 					font-size: 14px;
 					overflow: hidden;			
 				}
+				a:hover {
+					text-decoration: underline;
+				}
  			}
 		}
 		.switch-button {
@@ -235,7 +238,7 @@
 	padding-left: 2px;
 }
 .menu-item-has-children span > i {
-	font-size: 10px;
+	font-size: 12px;
 	transition: transform 0.1s ease;
 }
 .menu .menu-item-has-children:hover > a span i {

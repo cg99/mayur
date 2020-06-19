@@ -98,7 +98,27 @@ a {
       list-style: none;
       padding: inherit;
       li {
+        display: flex;
         font-size: 16px;
+        align-items: center;
+        margin-bottom: 5px;
+        img {
+          width: 50px;
+          margin-right: 5px;
+        }
+        a {
+          p {
+            margin: 0;
+            font-size: 11px;
+            span {
+              width: fit-content;
+              background-color: #444;
+              color: #eee;
+              padding: 1px 2px;
+              margin-right: 2px;
+            }
+          }
+        }
       }
       li:hover {
         text-decoration: underline;
@@ -138,3 +158,6 @@ a {
   padding: 10px;
 }
 
+// breadcrumbs
+.breadcrumbs a {text-decoration: none;}
+.breadcrumbs a:hover {text-decoration: underline;}
