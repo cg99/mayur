@@ -155,4 +155,15 @@ require get_theme_file_path('/inc/posts-route.php');
 		}
 	}
 
+	/**
+	 * Filter the "read more" excerpt string link to the post.
+	 *
+	 * @param string $more "Read more" excerpt string.
+	 * @return string (Maybe) modified "read more" excerpt string.
+	 */
+	function post_excerpt_more( $more ) {
+		$more = '...';
+		return $more;
+	}
+	add_filter( 'excerpt_more', 'post_excerpt_more' );
 ?>

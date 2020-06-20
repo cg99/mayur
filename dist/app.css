@@ -320,8 +320,8 @@ a {
   grid-template-areas: "left middle right";
   padding-left: 100px;
   padding-right: 100px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   color: #fff;
   font-size: 12px;
   background-color: #333;
@@ -551,11 +551,11 @@ a {
 }
 
 .menu-item-has-children span {
-  padding-left: 2px;
+  vertical-align: middle;
 }
 
 .menu-item-has-children span > i {
-  font-size: 12px;
+  font-size: 15px;
   transition: transform 0.1s ease;
 }
 
@@ -606,6 +606,7 @@ a {
 .footer-top p,
 .footer-bottom a,
 .footer-bottom p {
+  margin: 0;
   color: #fff;
 }
 
@@ -642,6 +643,8 @@ a {
   display: flex;
   justify-content: space-between;
   background-color: #005fcc;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .social-links {
@@ -1447,7 +1450,6 @@ a {
 }
 
 .sidebar .post-block-container {
-  display: flex;
   justify-content: center;
 }
 

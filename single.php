@@ -38,6 +38,12 @@
 
 							<div class="single-post-date">
 								<?php echo get_the_date(); ?>
+								<span>  
+								<?php 
+									$author = get_the_author(); 
+									if( $author != "admin"){ echo ' - ' . $author;} 
+								?>
+								</span>
 							</div>
 							
 							<div class="single-content">
@@ -66,11 +72,13 @@
 										// pull 3 posts 
 											$categories = get_the_category();
 											$cat_name = $categories[0]->name;
-
+											$post_id = get_the_ID();
+											
 											$args = array(
 												'post_type' => 'post',
 												'category_name' => $cat_name,
-												'posts_per_page' => '3'
+												'posts_per_page' => '3',
+												'post__not_in' => array( $post_id )
 											);
 											$query = new WP_Query( $args );
 										?>

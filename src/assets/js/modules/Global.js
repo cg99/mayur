@@ -11,20 +11,26 @@ class Global {
 
 		this.btnTop = document.querySelector('#topBtn');//scroll to top
 		this.navbar = document.getElementById('navbar');//navbar
+		this.header = document.querySelector('.header');//logo header
+
 
 		// trending
 		this.trending = document.querySelector('.trending');//trending
+		this.hasTrendElement = false;
 		this.btnNext = document.querySelector('#btnNext'); //next ticker btn
 		this.btnPrev = document.querySelector('#btnPrev'); //next ticker btn
 		this.trendTitle = document.getElementById('trendTitle');//trending title ul
-		this.nodelist = this.trendTitle.getElementsByTagName('a');//trending title a tag
+		if(this.trending) { 
+			this.hasTrendElement = true; 
+			this.nodelist = this.trendTitle.getElementsByTagName('a');//trending title a tag
+		}
 
 		this.btnNav = document.querySelector('.ham-btn'); //mobile menu btn
 		this.btnNavClose = document.querySelector('.mobile-menu_close'); //close menu btn
 		this.mobileMenu = document.querySelector('.mob-menu');
 		this.showMenu = false;
 
-		this.btnDropDown;
+		this.btnDropDown; // menu dropdown 
 		this.showDropMenu = false;
 		this.subMenu = document.querySelector('.mobile-menu_items .menu-item-has-children .sub-menu');
 		this.dropRotate;
@@ -46,8 +52,10 @@ class Global {
 
 		this.btnTop.addEventListener('click', this.scrollToTop);
 
-		this.btnNext.addEventListener('click', this.next.bind(this));
-		this.btnPrev.addEventListener('click', this.prev.bind(this));
+		if (this.hasTrendElement == true) {
+			this.btnNext.addEventListener('click', this.next.bind(this));
+			this.btnPrev.addEventListener('click', this.prev.bind(this));
+		}
 
 		this.btnNav.addEventListener('click', this.toggleNav.bind(this));
 		this.btnNavClose.addEventListener('click', this.toggleNav.bind(this));
@@ -73,7 +81,8 @@ class Global {
 		if (window.pageYOffset > navLoc) {
 			var originalNavLoc = navLoc;
 			this.navbar.classList.add('sticky');
-			this.trending.style.paddingTop = `${this.navbar.offsetHeight + menuMarginBottom}px`;
+			this.header.style.paddingBottom = `${this.navbar.offsetHeight + menuMarginBottom}px`;
+			
 			if (!wpAminBar) {
 				this.navbar.style.top = '0';
 			} else {
@@ -82,7 +91,8 @@ class Global {
 		} 
 		else {
 			this.navbar.classList.remove('sticky');
-			this.trending.style.paddingTop = '0';
+			this.header.style.paddingBottom = '0';
+			
 		}
 		
 	}
@@ -93,6 +103,7 @@ class Global {
 	}
 
 	autoNext(){
+		if (!this.hasTrendElement) return;
 		this.nodelist[this.tick].className = "";
 		setInterval(this.next.bind(this), 5000);
 	}
@@ -129,14 +140,14 @@ class Global {
 		// console.log(menuDrop);
 		menuDrop.forEach(menu => {
 			const dropIcon = document.createElement('span');
-			dropIcon.innerHTML = '<i class="fa fa-chevron-down"></i>';
+			dropIcon.innerHTML = '<i class="ri-arrow-down-s-fill"></i>';
 			menu.appendChild(dropIcon);
 		})
 
 		//for mobile
 		mobMenuDrop.forEach(menu => {
 			const dropIcon = document.createElement('span');
-			dropIcon.innerHTML = '<i class="fa fa-chevron-down"></i>';
+			dropIcon.innerHTML = '<i class="ri-arrow-down-s-fill"></i>';
 			menu.insertBefore(dropIcon, this.subMenu);
 		})
 	}

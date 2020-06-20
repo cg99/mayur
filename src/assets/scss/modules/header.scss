@@ -34,8 +34,8 @@
     'left middle right';
 
 	@include box-layout;
-	padding-top: 8px;
-	padding-bottom: 8px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 	color: #fff;
 	font-size: $font;
 	background-color: $black;
@@ -235,10 +235,10 @@
 
 // dropdown icon
 .menu-item-has-children span {
-	padding-left: 2px;
+	vertical-align: middle;
 }
 .menu-item-has-children span > i {
-	font-size: 12px;
+	font-size: 15px;
 	transition: transform 0.1s ease;
 }
 .menu .menu-item-has-children:hover > a span i {
