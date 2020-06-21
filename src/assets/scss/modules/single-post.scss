@@ -245,10 +245,14 @@
 @media (max-width: 568px) {
     .single-post{
         grid-template-areas: 
+        'category'
         'img'
         'title'
         'date' 
         'content';
+        .single-category {
+            padding: 1em;
+        }
     }
     .single-container {
         display: block;

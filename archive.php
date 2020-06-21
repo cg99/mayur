@@ -1,4 +1,4 @@
-<!-- home page -->
+<!-- category page page -->
     <?php get_header() ?>
     <div id="app">
         <div class="middle">

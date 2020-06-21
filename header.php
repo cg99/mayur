@@ -10,21 +10,25 @@
 	<?php wp_head(); ?>
 </head>
 <body>
-	<div class="mob-menu">
-		<span class="mobile-menu_close"><i class="ri-close-circle-line"></i></span>
-		<?php 
-			wp_nav_menu(
-				array(
-				'menu' => 'primary',
-				'theme_location' => 'header-menu',
-				'menu_class' => 'mobile-menu_items',
-				'container' => '',
-				'link_before' => '',
-				'link_after' => '',
-				)
-			);
-		?>
-	</div>
+	<?php if ( wp_is_mobile() ) { ?>
+		<div class="mob-menu">
+			<span class="mobile-menu_close">
+				<img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/close.png">	
+			</span>
+			<?php 
+				wp_nav_menu(
+					array(
+					'menu' => 'primary',
+					'theme_location' => 'header-menu',
+					'menu_class' => 'mobile-menu_items',
+					'container' => '',
+					'link_before' => '',
+					'link_after' => '',
+					)
+				);
+			?>
+		</div>
+	<?php } ?>
 	<div class="grid-container">
 		<header class="navigation">
 			

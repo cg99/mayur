@@ -45,8 +45,8 @@
 			</div>
 		</div>
 		<div class="footer-bottom">
-			<div><p>Developed by - <a href="https://www.facebook.com/Lafa.umes/">Umesh GM</a></p></div>
-			<div><p>Mayur WordPress Theme | All rights reserved &copy; <?php echo date("Y"); ?></p></div>
+			<div class="developer"><p>Developed by - <a href="https://www.facebook.com/Lafa.umes/">Umesh GM</a></p></div>
+			<div class="info"><p>Mayur WordPress Theme | All rights reserved &copy; <?php echo date("Y"); ?></p></div>
 
 			<button id="topBtn" title="Go to top">
 				<img src="<?php echo get_theme_file_uri('/dist/img/icons/scroll to top.png'); ?>">

@@ -37,4 +37,11 @@
 			</div>
 		</div>
 	</div>
+	<div class="wrapper">
+		<?php if ( is_active_sidebar( 'sidebar-2' ) ) { ?>
+			<div id="sidebar-two">
+				<?php dynamic_sidebar('sidebar-2'); ?>
+			</div>
+		<?php } ?>
+	</div>
 </div>
