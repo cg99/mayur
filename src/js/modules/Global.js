@@ -57,11 +57,13 @@ class Global {
 			this.btnPrev.addEventListener('click', this.prev.bind(this));
 		}
 
-		this.btnNav.addEventListener('click', this.toggleNav.bind(this));
-		this.btnNavClose.addEventListener('click', this.toggleNav.bind(this));
+		if (this.mobileMenu) { // for mobile nav
+			this.btnNav.addEventListener('click', this.toggleNav.bind(this));
+			this.btnNavClose.addEventListener('click', this.toggleNav.bind(this));
 
-		this.btnDropDown = this.mobileMenu.querySelector('.menu-item-has-children span'); 
-		this.btnDropDown.addEventListener('click', this.toggleDropDownMenu.bind(this));
+			this.btnDropDown = this.mobileMenu.querySelector('.menu-item-has-children span'); 
+			this.btnDropDown.addEventListener('click', this.toggleDropDownMenu.bind(this));
+		}
 	}
 
 	//methods

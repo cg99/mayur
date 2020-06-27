@@ -69,7 +69,7 @@
                     font-weight: 700;
                 }
                 a:focus {
-                    background: #0051af;	
+                    background: #333;	
                 }
                 ul {
                     display: none;
@@ -188,9 +188,9 @@
         z-index: 99;
         transition: display 0.2s ease;
         padding: 15% 10px 0 10px;
-        .search-overlay_top{
-            // margin: 15% 10px 0 10px;
-        }
+        // .search-overlay_top{
+        //     margin: 15% 10px 0 10px;
+        // }
     }
 
     .menu-item-has-children span > i{
@@ -311,6 +311,10 @@
         }
     }
 
+    #sideGroup6 .post:first-child .post-details .post-category {
+        top: -23px;
+    }
+
     #group8 .post {
         width: 100vw;
         padding: 10px 0;
@@ -319,7 +323,7 @@
         }
         .post-details .post-category {
             margin: 0;
-            top: 194px;
+            top: 192px;
             left: 0px;
         }
         .post-title, .post-date{

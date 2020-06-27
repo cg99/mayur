@@ -6,11 +6,11 @@ require get_theme_file_path('/inc/posts-route.php');
 
 	add_action( 'wp_enqueue_scripts', 'startingScript' );
 	function startingScript() {
-		wp_enqueue_script( 'use_jquery', get_template_directory_uri() . '/src/assets/js/dependencies/timeago.js', array('jquery') );
+		wp_enqueue_script( 'use_jquery', get_template_directory_uri() . '/src/js/dependencies/timeago.js', array('jquery') );
 		
 		wp_enqueue_script( 'js_app', get_theme_file_uri('/dist/script.js'), NULL, microtime(), true ); //true is to show it in footer.
 
-		wp_enqueue_script( 'js_depend', get_theme_file_uri('/src/assets/js/dependencies/timeago.js'), NULL, microtime(), true );
+		wp_enqueue_script( 'js_depend', get_theme_file_uri('/src/js/dependencies/timeago.js'), NULL, microtime(), true );
 		
 		wp_enqueue_style( 'css_app', get_template_directory_uri().'/dist/app.css', NULL, microtime() );
 

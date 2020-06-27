@@ -74,7 +74,7 @@ class Search{
 					this.resultsDiv.innerHTML = '<div>Loading...</div>';
 					this.isSpinning = true;
 				}
-				this.typingTimer = setTimeout(this.getResults.bind(this), 250);
+				this.typingTimer = setTimeout(this.getResults.bind(this), 200);
 			} else {
 				this.resultsDiv.innerHTML = '';
 				this.isSpinning = false;

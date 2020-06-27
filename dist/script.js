@@ -10696,10 +10696,10 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./src/assets/js/modules/Global.js":
-/*!*****************************************!*\
-  !*** ./src/assets/js/modules/Global.js ***!
-  \*****************************************/
+/***/ "./src/js/modules/Global.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/Global.js ***!
+  \**********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -10776,10 +10776,13 @@ function () {
         this.btnPrev.addEventListener('click', this.prev.bind(this));
       }
 
-      this.btnNav.addEventListener('click', this.toggleNav.bind(this));
-      this.btnNavClose.addEventListener('click', this.toggleNav.bind(this));
-      this.btnDropDown = this.mobileMenu.querySelector('.menu-item-has-children span');
-      this.btnDropDown.addEventListener('click', this.toggleDropDownMenu.bind(this));
+      if (this.mobileMenu) {
+        // for mobile nav
+        this.btnNav.addEventListener('click', this.toggleNav.bind(this));
+        this.btnNavClose.addEventListener('click', this.toggleNav.bind(this));
+        this.btnDropDown = this.mobileMenu.querySelector('.menu-item-has-children span');
+        this.btnDropDown.addEventListener('click', this.toggleDropDownMenu.bind(this));
+      }
     } //methods
 
   }, {
@@ -10936,10 +10939,10 @@ function () {
 
 /***/ }),
 
-/***/ "./src/assets/js/modules/Posts.js":
-/*!****************************************!*\
-  !*** ./src/assets/js/modules/Posts.js ***!
-  \****************************************/
+/***/ "./src/js/modules/Posts.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/Posts.js ***!
+  \*********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11018,10 +11021,10 @@ function () {
 
 /***/ }),
 
-/***/ "./src/assets/js/modules/Search.js":
-/*!*****************************************!*\
-  !*** ./src/assets/js/modules/Search.js ***!
-  \*****************************************/
+/***/ "./src/js/modules/Search.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/Search.js ***!
+  \**********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11117,7 +11120,7 @@ function () {
             this.isSpinning = true;
           }
 
-          this.typingTimer = setTimeout(this.getResults.bind(this), 250);
+          this.typingTimer = setTimeout(this.getResults.bind(this), 200);
         } else {
           this.resultsDiv.innerHTML = '';
           this.isSpinning = false;
@@ -11155,10 +11158,10 @@ function () {
 
 /***/ }),
 
-/***/ "./src/assets/js/script.js":
-/*!*********************************!*\
-  !*** ./src/assets/js/script.js ***!
-  \*********************************/
+/***/ "./src/js/script.js":
+/*!**************************!*\
+  !*** ./src/js/script.js ***!
+  \**************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11166,9 +11169,9 @@ function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _modules_Global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Global */ "./src/assets/js/modules/Global.js");
-/* harmony import */ var _modules_Posts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/Posts */ "./src/assets/js/modules/Posts.js");
-/* harmony import */ var _modules_Search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/Search */ "./src/assets/js/modules/Search.js");
+/* harmony import */ var _modules_Global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Global */ "./src/js/modules/Global.js");
+/* harmony import */ var _modules_Posts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/Posts */ "./src/js/modules/Posts.js");
+/* harmony import */ var _modules_Search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/Search */ "./src/js/modules/Search.js");
 // 3rd party packages from NPM
  // Our modules / classes
 
@@ -11182,10 +11185,10 @@ var search = new _modules_Search__WEBPACK_IMPORTED_MODULE_3__["default"]();
 
 /***/ }),
 
-/***/ "./src/assets/scss/app.scss":
-/*!**********************************!*\
-  !*** ./src/assets/scss/app.scss ***!
-  \**********************************/
+/***/ "./src/scss/app.scss":
+/*!***************************!*\
+  !*** ./src/scss/app.scss ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11194,14 +11197,14 @@ var search = new _modules_Search__WEBPACK_IMPORTED_MODULE_3__["default"]();
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************!*\
-  !*** multi ./src/assets/js/script.js ./src/assets/scss/app.scss ***!
-  \******************************************************************/
+/*!****************************************************!*\
+  !*** multi ./src/js/script.js ./src/scss/app.scss ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\myagdiWP\wordpress\wp-content\themes\mayur\src\assets\js\script.js */"./src/assets/js/script.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\myagdiWP\wordpress\wp-content\themes\mayur\src\assets\scss\app.scss */"./src/assets/scss/app.scss");
+__webpack_require__(/*! C:\wamp64\www\myagdiWP\wordpress\wp-content\themes\mayur\src\js\script.js */"./src/js/script.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\myagdiWP\wordpress\wp-content\themes\mayur\src\scss\app.scss */"./src/scss/app.scss");
 
 
 /***/ })

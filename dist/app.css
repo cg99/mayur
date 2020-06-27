@@ -1053,6 +1053,7 @@ a {
 .post-group .post .post-details .post-excerpt {
   display: none;
   color: #666;
+  text-align: justify;
 }
 
 .post:hover .post-details .post-title a {
@@ -2097,7 +2098,7 @@ a {
   }
 
   .mob-menu .mobile-menu_items li a:focus {
-    background: #0051af;
+    background: #333;
   }
 
   .mob-menu .mobile-menu_items li ul {
@@ -2376,6 +2377,10 @@ a {
     margin: 0;
   }
 
+  #sideGroup6 .post:first-child .post-details .post-category {
+    top: -23px;
+  }
+
   #group8 .post {
     width: 100vw;
     padding: 10px 0;
@@ -2387,7 +2392,7 @@ a {
 
   #group8 .post .post-details .post-category {
     margin: 0;
-    top: 194px;
+    top: 192px;
     left: 0px;
   }
 

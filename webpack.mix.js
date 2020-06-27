@@ -1,11 +1,11 @@
 let mix = require('laravel-mix');
 
 
-mix.js('src/assets/js/script.js', 'dist/')
-	.copy('src/assets/img/*', 'dist/img/')
-	.sass('src/assets/scss/app.scss', 'dist/')
+mix.js('src/js/script.js', 'dist/')
+	.copy('src/img/*', 'dist/img/')
+	.sass('src/scss/app.scss', 'dist/')
 	.browserSync({
-		proxy: 'http://danphe.local/',
+		proxy: 'http://mayur.theme/',
 		files: [
       		'dist/app.css',  // Generated .css file
       		'dist/script.js',    // Generated .js file
