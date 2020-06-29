@@ -10,13 +10,13 @@
             <?php 
                 $cat = get_theme_mod('category_4');
                 $cat = get_category($cat);
-                $cat_post = $cat->name;  
+                $cat_post = $cat->slug;  
 
                 if (empty($cat_post)) { //check if category is set
                     $cat_post = 'uncategorized';
                 }
 
-                echo $cat_post;
+                echo $cat->name;
             ?>
             </h3>
         </div>

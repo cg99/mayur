@@ -1,6 +1,6 @@
 	
 		<article class="post">
-			<a href="<?php the_permalink() ?>">
+			<a href="<?php esc_url(the_permalink()); ?>">
 				<figure>
 					<img src="<?php 
 						$pic = get_the_post_thumbnail_url();
@@ -8,13 +8,13 @@
 							$site = get_template_directory_uri();
 							$pic = $site . '/dist/img/post_img.png';
 						}
-						echo $pic; 
+						echo esc_url($pic); 
 					?>" alt="thumbnail">
 				</figure>
 			</a>
 			<div class="post-details">
 				<h3 class="post-title">
-					<a href="<?php the_permalink() ?>">
+					<a href="<?php esc_url(the_permalink()); ?>">
 						<?php the_title() ?>
 					</a>
 				</h3>

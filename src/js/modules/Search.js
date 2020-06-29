@@ -89,7 +89,7 @@ class Search{
         fetch(url)
             .then(response => response.json()) 
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 this.resultsDiv.innerHTML = `
 					<div>
 						${data.length ? '<ul>' : '<p>No matches found</p>'}

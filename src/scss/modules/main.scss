@@ -86,7 +86,7 @@
 
 .post-title, .post-date, .post-excerpt, .post-category{
     text-align: left;
-    margin: 5px;
+    margin: 0;
 }
 
 
@@ -96,7 +96,7 @@
 }
 .advertise {
     figure{
-        margin-right: auto;
+        // margin-right: auto;
         width: fit-content;
         img{
             height: auto;

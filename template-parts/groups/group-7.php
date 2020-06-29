@@ -5,13 +5,13 @@
             $colors = array("#00b9eb", "#f44", "#ff8922", "#ee6f00", "#d00", "#008b8b", "#708090", "#00ff7f");
             $color_num = rand(0, 7);
         ?>
-        <div class="group-heading" style="border-bottom-color: <?php echo $colors[$color_num]; ?>; width: 350px;">
+        <div class="group-heading group7-heading" style="border-bottom-color: <?php echo $colors[$color_num]; ?>; ">
             <h3 style="background-color: <?php echo $colors[$color_num]; ?>">
             <?php 
                 $cat = get_theme_mod('category_7');
                 $cat = get_category($cat);
-                $cat_post = $cat->name;  
-                echo $cat_post;
+                $cat_post = $cat->slug;  
+                echo $cat->name;
             ?>
             </h3>
         </div>
@@ -41,18 +41,18 @@
             $colors = array("#00b9eb", "#f44", "#ff8922", "#ee6f00", "#d00", "#008b8b", "#444", "#00ff7f");
             $color_num = rand(0, 7);
         ?>
-        <div class="group-heading" style="border-bottom-color: <?php echo $colors[$color_num]; ?>; width: 350px;">
+        <div class="group-heading group7-heading" style="border-bottom-color: <?php echo $colors[$color_num]; ?>; ">
             <h3 style="background-color: <?php echo $colors[$color_num]; ?>">
             <?php 
                 $cat = get_theme_mod('category_8');
                 $cat = get_category($cat);
-                $cat_post = $cat->name;  
+                $cat_post = $cat->slug;  
 
                 if (empty($cat_post)) { //check if category is set
                     $cat_post = 'uncategorized';
                 }
                 
-                echo $cat_post;
+                echo $cat->name;
             ?>
             </h3>
         </div>
@@ -83,13 +83,13 @@
             <?php 
                 $cat = get_theme_mod('side_category_4');
                 $cat = get_category($cat);
-                $cat_post = $cat->name;  
+                $cat_post = $cat->slug;  
 
                 if (empty($cat_post)) { //check if category is set
                     $cat_post = 'uncategorized';
                 }
 
-                echo $cat_post;
+                echo $cat->name;
             ?>
             </h3>
         </div>

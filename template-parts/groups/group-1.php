@@ -6,7 +6,7 @@
             // pull 5 posts 
                 $cat = get_theme_mod('category_1');
                 $cat = get_category($cat);
-                $cat_post = $cat->name;
+                $cat_post = $cat->slug;
                 
                 if (empty($cat_post)) {
                     $cat_post = 'uncategorized';

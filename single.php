@@ -30,13 +30,18 @@
 										$site = get_template_directory_uri();
 										$pic = $site . '/dist/img/post_img.png';
 									}
-									echo $pic; 
+									echo esc_url($pic); 
 								?>" alt="thumbnail">
 							</figure>
 
 							<h3 class="single-post-title"><?php the_title(); ?></h3>
 
 							<div class="single-post-date">
+							<i class="ri-calendar-event-line"
+								style="
+								top: 3px; 
+								position: relative;
+								"></i>
 								<?php echo get_the_date(); ?>
 								<span>  
 								<?php 
@@ -71,7 +76,7 @@
 										<?php 
 										// pull 3 posts 
 											$categories = get_the_category();
-											$cat_name = $categories[0]->name;
+											$cat_name = $categories[0]->slug;
 											$post_id = get_the_ID();
 											
 											$args = array(

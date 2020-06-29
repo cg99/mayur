@@ -117,10 +117,15 @@
 		a{
 			color: inherit;
 			display: block;
-			line-height: 38px;
+			line-height: 40px;
 			padding: 0 15px;
 			text-transform: capitalize;
-			// height: 30px;
+			height: inherit;
+			font-size: 16px;
+			font-weight: 500;
+			i {
+				font-size: inherit;
+			}
 		}
 		a:hover {
 			background: #0051af;	
@@ -152,7 +157,7 @@
 					display: none; /* hide all sub menus from view */
 					position: absolute;
 					z-index: 99;
-					top: 39px; /* this should be the same height as the top level menu -- height + padding + borders */	
+					top: 40px; /* this should be the same height as the top level menu -- height + padding + borders */	
 					li{
 						float: none; /* overwriting our float up above */
 						width: 150px;
@@ -199,7 +204,7 @@
  				display: inherit;
 				a{
 					color: #000;
-					font-size: 14px;
+					font-size: 16px;
 					overflow: hidden;			
 				}
 				a:hover {

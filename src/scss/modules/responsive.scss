@@ -115,8 +115,9 @@
             }
             .main-nav{
                 #navbar{
-                    .ham-btn{
-                        display: block;
+                    .ham-btn, .search {
+                        display: flex;
+                        align-items: center;
                     }
                 }
                 .trending{
@@ -205,6 +206,8 @@
         "g1-a g1-a"
         "g1-b g1-b"
         "g1-c g1-d";
+        .post:first-child .post-details { bottom: 1px; }
+        .post .post-details { bottom: 11px; }
         .post:nth-child(3), .post:nth-child(4) {
             width: 48vw;
             figure{
@@ -213,7 +216,94 @@
         }
     }
 
-    .group-container{
+    #group2, #group3, #group5, #sideGroup6 { 
+        .post:first-child {
+            padding-left: 0;
+            .post-details {
+                padding: 5px;
+                .post-category { margin-left: -5px; }
+                .post-excerpt { 
+                    margin: 0; 
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .post { padding-left: 5px; }
+    }
+    #group3 {
+        .post:nth-child(2) {
+            width: 100vw;
+            display: flex;
+            figure {
+                margin: 0;
+                width: 120px;
+                height: 90px;
+                img {
+                    width: inherit;
+                    height: inherit;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                }
+            }
+            .post-details {
+                padding-left: 5px;
+                .post-title {
+                    a {
+                        font-size: 18px;
+                    }
+                }
+                .post-category {
+                    position: relative;
+                    top: auto;
+                    span {
+                        background-color: #f5f5f5;
+                        color:#333;
+                    }
+                }
+                .post-excerpt { display: none; }
+            }
+        }
+        .post:nth-child(4) {
+            display: block;
+            padding-left: 0;
+            width: 100vw;
+            figure { 
+                width: 100vw; 
+                height: 280px;
+            }
+            .post-details {
+                padding: 5px;
+                .post-title a {     
+                    font-size: 26px;
+                    font-weight: 500;
+                }
+                .post-category { 
+                    margin-left: -5px; 
+                    position: absolute;
+                    top: -19px;
+                    text-transform: capitalize;
+                    span {
+                        background-color: #444;
+                        color: #f5f5f5;
+                        font-size: 12px;
+                        padding: 0px 4px;
+                        margin-right: 2px;
+                    }
+                }
+                .post-excerpt { 
+                    display: block;
+                    margin-top: auto; 
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .group-container {
         display: block;
         .group-heading {
             margin: 2px 0;
@@ -234,22 +324,22 @@
 
     .post-group {
         display: block;
-        .post{
+        .post {
             max-width: 100vw;
             width: 100vw;
             padding: 5px 0;
-            .post-details{
-                p:first-child{margin-top: 0;}
+            .post-details {
+                p:first-child { margin-top: 0; }
             }
         }
-        .post:first-child{
+        .post:first-child {
             figure{
                 width: 100vw !important;
             }
         }
     }
 
-    .adv-wrapper{
+    .adv-wrapper {
         display: block;
         margin-top: 5px;
         margin-bottom: 5px;
@@ -264,30 +354,28 @@
             }
         }
     }
-
-    .one-post #group5 .post {
-        width: 100vw;
-        margin: 0 0 5px 0;
-    }
-
+    
     #group4 {
         display: block;
         .post{
             width: 100vw;
             figure{
                 width: 100vw;
-                img{
-                    padding: 0;
-                }
+                img{ padding: 0; }
             }
-            .post-details .post-category {
-                top: 155px;
+            .post-details {
+                .post-title { padding-left: 5px; }
+                .post-category { top: 154px; }
             }
         }
-        .post:nth-child(2){
-            margin: 0;
-        }
+        .post:nth-child(2){ margin: 0; }
     }
+
+    .one-post #group5 .post {
+        width: 100vw;
+        margin: 0 0 5px 0;
+    }
+
 
     #group6 {
         display: block;
@@ -302,7 +390,7 @@
                 display: none;
             }
             .post-details{
-                padding: 0 2px;
+                padding: 2px 5px;
             }
             .post-title, .post-date, .post-excerpt, .post-category {
                 text-align: left;
@@ -312,7 +400,25 @@
     }
 
     #sideGroup6 .post:first-child .post-details .post-category {
-        top: -23px;
+        top: -19px;
+    }
+
+    .group7-heading {
+        width: 100vw;
+    }
+    #group7 {
+        .post:first-child {
+            padding-left: 0;
+            .post-details {
+                padding: 5px;
+                .post-excerpt { margin-top: auto; }
+            }
+        }
+        .post { padding-left: 5px; }
+    }
+
+    #group-text-only .post {
+        padding-left: 5px;
     }
 
     #group8 .post {
@@ -323,7 +429,7 @@
         }
         .post-details .post-category {
             margin: 0;
-            top: 192px;
+            top: 191px;
             left: 0px;
         }
         .post-title, .post-date{
@@ -353,6 +459,15 @@
 
     .sidebar .post-block-container {
         margin: 10px 0;
+        .post-block {
+            .post { 
+                margin: auto; 
+                width: 48vw;
+                figure {
+                    width: 48vw;
+                }
+            }
+        }
     }
 
     .container-archive .archive-post {

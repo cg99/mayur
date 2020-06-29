@@ -11,7 +11,7 @@
             $trend_posts->the_post(); 
             if(!is_sticky()) { ?>
             <li>
-                <a class="hidden" href="<?php the_permalink() ?>">
+                <a class="hidden" href="<?php esc_url(the_permalink()); ?>">
                     <span><?php the_title() ?></span>
                 </a>
             </li>

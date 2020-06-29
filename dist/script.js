@@ -11138,7 +11138,7 @@ function () {
       fetch(url).then(function (response) {
         return response.json();
       }).then(function (data) {
-        console.log(data);
+        // console.log(data);
         _this2.resultsDiv.innerHTML = "\n\t\t\t\t\t<div>\n\t\t\t\t\t\t".concat(data.length ? '<ul>' : '<p>No matches found</p>', "\n                            ").concat(data.map(function (item) {
           return "<li>\n                                <img src=\"".concat(item.featured_img, "\">\n                                <a href=\"").concat(item.link, "\">").concat(item.title, "\n                                    <p>").concat(item.category.map(function (cat) {
             return "<span>".concat(cat.name, "</span>");

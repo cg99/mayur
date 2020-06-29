@@ -13,7 +13,7 @@
 	<?php if ( wp_is_mobile() ) { ?>
 		<div class="mob-menu">
 			<span class="mobile-menu_close">
-				<img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/close.png">	
+				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/icons/close.png">	
 			</span>
 			<?php 
 				wp_nav_menu(

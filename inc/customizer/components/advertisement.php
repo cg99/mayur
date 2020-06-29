@@ -6,7 +6,7 @@ $wp_customize->add_panel( 'advertisement', array(
     'priority' => 100, 
   ) );
 
-// homepage ads loop 1-20 is for main section and 20-32 is for others
+// homepage ads loop 1-21 is for main section and 21-32 is for others
 $k = 1;
 for($i = 1; $i <= 16; $i++){
     $wp_customize->add_section('advertisement'.$i, array(
@@ -14,7 +14,7 @@ for($i = 1; $i <= 16; $i++){
         'panel' => 'advertisement',
         'priority' => 160 + $k,
     ));
-    for($j = 1; $j <= 2; $j++){
+    for($j = 1; $j <= 3; $j++){
         // Ad image
         $wp_customize->add_setting('home_ad_'.$k, array(
             'default' => get_bloginfo('template_directory').'/dist/img/a.gif',

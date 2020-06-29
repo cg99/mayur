@@ -1,11 +1,11 @@
 <nav id="navbar" class="header_nav">
-    <a href="<?php echo site_url(); ?>" class="home"> <i class="ri-home-2-line"></i> </a>
+    <a href="<?php echo esc_url(site_url()); ?>" class="home"> <i class="ri-home-2-line"></i> </a>
     <a href="#" class="ham-btn"> <i class="ri-menu-fill"></i> </a>
 
     <?php 
 	if ( wp_is_mobile() ) { ?>
     <a class="mobile-logo" href="<?php echo site_url(); ?>">
-        <img src="<?php echo get_theme_mod('logo', 'default'); ?>">
+        <img src="<?php echo esc_url(get_theme_mod('logo', 'default')); ?>">
     </a>
     <?php } ?>
 
