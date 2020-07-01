@@ -51,6 +51,7 @@ $wp_customize->add_section( 'home_post_category', array(
     'title' => esc_html_x( 'Group Post Category', 'customizer section title', 'mayur' ),
 ) );
 
+// 1st group by category
 $wp_customize->add_setting( 'category_1', array(
     'default'           => 0,
     'sanitize_callback' => 'absint',
