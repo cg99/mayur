@@ -43,8 +43,12 @@
     </div>
     
     <div class="group-sidebar">
-        <div class="group-heading">
-            <h3>Stay Connected</h3>
+        <div class="wrapper">
+            <?php if ( is_active_sidebar( 'home-sidebar-1' ) ) { ?>
+                <div id="home-sidebar-one">
+                    <?php dynamic_sidebar('home-sidebar-1'); ?>
+                </div>
+            <?php } ?>
         </div>
         <div class="sidebar">
             <?php

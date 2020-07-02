@@ -41,7 +41,9 @@ require get_theme_file_path('/inc/posts-route.php');
 		));
 	}
 	
-	function multiple_widget_init(){
+	function multiple_widget_init(){	
+		widget_registration('Home Sidebar Widget 1', 'home-sidebar-1', '', '', '', '<div class="group-heading">
+		<h3>', '</h3></div>');	
 		widget_registration('Sidebar Widget 1', 'sidebar-1', '', '', '', '<div class="group-heading">
 		<h3>', '</h3></div>');
 		widget_registration('Sidebar Widget 2', 'sidebar-2', '', '', '', '<div class="group-heading">
