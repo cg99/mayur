@@ -32,14 +32,14 @@
     <div class="group-sidebar">
         <div class="group-heading">
             <h3>
-            <?php /*
+            <?php 
                 $cat = get_theme_mod('side_category_5');
                 $cat = get_category($cat);
-                $cat_post = $cat->name;  
-                echo $cat_post;
-                */
+                $cat_post = $cat->slug;  
+                echo $cat->name;
+                
             ?>
-            Popular Post
+            <!-- Popular Post -->
             </h3>
         </div>
         <div class="sidebar">
@@ -49,7 +49,7 @@
                     // pull 4 posts 
                         $args = array(
                             'post_type' => 'post',
-                            'orderby' => 'comment_count',
+                            'category_name' => $cat_post,
                             'posts_per_page' => '4'
                         );
                         $query = new WP_Query( $args );

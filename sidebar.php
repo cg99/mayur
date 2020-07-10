@@ -8,7 +8,16 @@
 		<?php } ?>
 	</div>
 	<div class="group-heading">
-		<h3>Popular Posts</h3>
+		<h3>
+			<?php 
+                $cat = get_theme_mod('side_category_5');
+                $cat = get_category($cat);
+                $cat_post = $cat->slug;  
+                echo $cat->name;
+                
+            ?>
+			<!-- Popular Posts -->
+		</h3>
 	</div>
 	<div class="sidebar">
 		<div class="popular-post-container">
@@ -18,7 +27,7 @@
 					$args = array(
 						'post_type' => 'post',
 						'posts_per_page' => '4',
-						'orderby' => 'comment_count'
+						'category_name' => $cat_post,
 					);
 					$query = new WP_Query( $args );
 				?>
