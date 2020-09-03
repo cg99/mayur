@@ -30,10 +30,10 @@
 					<?php 
 					$categories = get_the_category();
 					if($categories[0]->name !== 'Uncategorized'){ 
-						$count = 0;
+						$count = 1;
 						foreach($categories as $category){ ?>
 						<span>
-							<?php echo $category->name; $count++ ; if($count > 5)  break; ?>
+							<?php echo $category->name; $count++ ; if($count >= 5)  break; ?>
 						</span>
 					<?php } } ?>
 				</div>

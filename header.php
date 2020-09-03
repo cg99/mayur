@@ -10,25 +10,25 @@
 	<?php wp_head(); ?>
 </head>
 <body>
-	<?php if ( wp_is_mobile() ) { ?>
-		<div class="mob-menu">
-			<span class="mobile-menu_close">
-				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/icons/close.png">	
-			</span>
-			<?php 
-				wp_nav_menu(
-					array(
-					'menu' => 'primary',
-					'theme_location' => 'header-menu',
-					'menu_class' => 'mobile-menu_items',
-					'container' => '',
-					'link_before' => '',
-					'link_after' => '',
-					)
-				);
-			?>
-		</div>
-	<?php } ?>
+	
+	<div class="mob-menu">
+		<span class="mobile-menu_close">
+			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/icons/close.png">	
+		</span>
+		<?php 
+			wp_nav_menu(
+				array(
+				'menu' => 'primary',
+				'theme_location' => 'header-menu',
+				'menu_class' => 'mobile-menu_items',
+				'container' => '',
+				'link_before' => '',
+				'link_after' => '',
+				)
+			);
+		?>
+	</div>
+
 	<div class="grid-container">
 		<header class="navigation">
 			

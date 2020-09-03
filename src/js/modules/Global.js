@@ -32,7 +32,7 @@ class Global {
 
 		this.btnDropDown; // menu dropdown 
 		this.showDropMenu = false;
-		this.subMenu = document.querySelector('.mobile-menu_items .menu-item-has-children .sub-menu');
+		this.subMenuList = document.querySelectorAll('.mobile-menu_items .menu-item-has-children .sub-menu');
 		this.dropRotate;
 
 		// methods
@@ -61,8 +61,10 @@ class Global {
 			this.btnNav.addEventListener('click', this.toggleNav.bind(this));
 			this.btnNavClose.addEventListener('click', this.toggleNav.bind(this));
 
-			this.btnDropDown = this.mobileMenu.querySelector('.menu-item-has-children span'); 
-			this.btnDropDown.addEventListener('click', this.toggleDropDownMenu.bind(this));
+			this.btnDropDowns = this.mobileMenu.querySelectorAll('.menu-item-has-children span'); 
+			this.btnDropDowns.forEach( btn => {
+				btn.addEventListener('click', this.toggleDropDownMenu);
+			});
 		}
 	}
 
@@ -150,7 +152,8 @@ class Global {
 		mobMenuDrop.forEach(menu => {
 			const dropIcon = document.createElement('span');
 			dropIcon.innerHTML = '<i class="ri-arrow-down-s-fill"></i>';
-			menu.insertBefore(dropIcon, this.subMenu);
+			const subMenuMobile = menu.querySelector('.sub-menu');
+			menu.insertBefore(dropIcon, subMenuMobile);
 		})
 	}
 
@@ -177,15 +180,14 @@ class Global {
 	}
 
 	toggleDropDownMenu(){
-		this.dropRotate = this.mobileMenu.querySelector('.mobile-menu_items i');
+		this.dropRotate = this.querySelector('i');
+			// statements
 		if(this.showDropMenu) {
-			this.subMenu.style.display = 'none';
+			this.dropRotate.parentNode.nextSibling.style.display = 'none'; // submenu
 			this.showDropMenu = false;
-			this.dropRotate.style.transform = 'rotate(360deg)';
 		}else{
-			this.subMenu.style.display = 'block';
+			this.dropRotate.parentNode.nextSibling.style.display = 'block'; // submenu
 			this.showDropMenu = true;
-			this.dropRotate.style.transform = 'rotate(180deg)';
 		}	
 	}
 

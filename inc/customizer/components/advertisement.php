@@ -6,7 +6,7 @@ $wp_customize->add_panel( 'advertisement', array(
     'priority' => 100, 
   ) );
 
-// homepage ads loop 16 * 3
+// homepage ads loop 10 * 3
 $k = 1;
 for($i = 1; $i <= 10; $i++){
     $wp_customize->add_section('advertisement'.$i, array(

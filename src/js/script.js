@@ -8,6 +8,9 @@ import Search from './modules/Search';
 
 
 // Instantiate a new object using our modules/classes
-var global = new Global();
-var posts = new Posts();
-var search = new Search();
+document.addEventListener('DOMContentLoaded', function(event) {
+    var global = new Global();
+    var posts = new Posts();
+    var search = new Search();
+})
+  

@@ -427,6 +427,10 @@ a {
   background: #0051af;
 }
 
+.main-nav #navbar .mobile-logo {
+  display: none;
+}
+
 .main-nav #navbar .ham-btn {
   display: none;
 }

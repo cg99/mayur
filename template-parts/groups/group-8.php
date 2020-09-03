@@ -69,14 +69,14 @@
                 </div>
             </div>
             <?php
-                $getExpiryDate = get_theme_mod('ad_expiry_date_25', 'default');
+                $getExpiryDate = get_theme_mod('ad_expiry_date_29', 'default');
 				$expire = strtotime($getExpiryDate);
 				$today = strtotime(date("Y-m-d"));
 				if($expire > $today) { ?>
                 <div class="bigyapan">
                     <figure>
                         <figcaption class="">- Advertisement -</figcaption>     
-                        <img src="<?php echo get_theme_mod('home_ad_25', 'default');?>" alt="Bigyapan">
+                        <img src="<?php echo get_theme_mod('home_ad_29', 'default');?>" alt="Bigyapan">
                     </figure>
                 </div>
            <?php } ?>

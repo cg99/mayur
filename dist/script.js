@@ -10754,7 +10754,7 @@ function () {
     this.btnDropDown; // menu dropdown 
 
     this.showDropMenu = false;
-    this.subMenu = document.querySelector('.mobile-menu_items .menu-item-has-children .sub-menu');
+    this.subMenuList = document.querySelectorAll('.mobile-menu_items .menu-item-has-children .sub-menu');
     this.dropRotate; // methods
 
     this.autoNext();
@@ -10767,6 +10767,8 @@ function () {
   _createClass(Global, [{
     key: "eventHandler",
     value: function eventHandler() {
+      var _this = this;
+
       // console.log("events are here");
       window.addEventListener('scroll', this.scrollFunction.bind(this));
       this.btnTop.addEventListener('click', this.scrollToTop);
@@ -10780,8 +10782,10 @@ function () {
         // for mobile nav
         this.btnNav.addEventListener('click', this.toggleNav.bind(this));
         this.btnNavClose.addEventListener('click', this.toggleNav.bind(this));
-        this.btnDropDown = this.mobileMenu.querySelector('.menu-item-has-children span');
-        this.btnDropDown.addEventListener('click', this.toggleDropDownMenu.bind(this));
+        this.btnDropDowns = this.mobileMenu.querySelectorAll('.menu-item-has-children span');
+        this.btnDropDowns.forEach(function (btn) {
+          btn.addEventListener('click', _this.toggleDropDownMenu);
+        });
       }
     } //methods
 
@@ -10869,8 +10873,6 @@ function () {
   }, {
     key: "menu",
     value: function menu() {
-      var _this = this;
-
       var menuDrop = document.querySelectorAll('.menu .menu-item-has-children > a'); //only first descendents
 
       var mobMenuDrop = document.querySelectorAll('.mobile-menu_items .menu-item-has-children'); //for mobile
@@ -10885,7 +10887,8 @@ function () {
       mobMenuDrop.forEach(function (menu) {
         var dropIcon = document.createElement('span');
         dropIcon.innerHTML = '<i class="ri-arrow-down-s-fill"></i>';
-        menu.insertBefore(dropIcon, _this.subMenu);
+        var subMenuMobile = menu.querySelector('.sub-menu');
+        menu.insertBefore(dropIcon, subMenuMobile);
       });
     }
   }, {
@@ -10917,16 +10920,16 @@ function () {
   }, {
     key: "toggleDropDownMenu",
     value: function toggleDropDownMenu() {
-      this.dropRotate = this.mobileMenu.querySelector('.mobile-menu_items i');
+      this.dropRotate = this.querySelector('i'); // statements
 
       if (this.showDropMenu) {
-        this.subMenu.style.display = 'none';
+        this.dropRotate.parentNode.nextSibling.style.display = 'none'; // submenu
+
         this.showDropMenu = false;
-        this.dropRotate.style.transform = 'rotate(360deg)';
       } else {
-        this.subMenu.style.display = 'block';
+        this.dropRotate.parentNode.nextSibling.style.display = 'block'; // submenu
+
         this.showDropMenu = true;
-        this.dropRotate.style.transform = 'rotate(180deg)';
       }
     }
   }]);
@@ -11179,9 +11182,11 @@ __webpack_require__.r(__webpack_exports__);
 
  // Instantiate a new object using our modules/classes
 
-var global = new _modules_Global__WEBPACK_IMPORTED_MODULE_1__["default"]();
-var posts = new _modules_Posts__WEBPACK_IMPORTED_MODULE_2__["default"]();
-var search = new _modules_Search__WEBPACK_IMPORTED_MODULE_3__["default"]();
+document.addEventListener('DOMContentLoaded', function (event) {
+  var global = new _modules_Global__WEBPACK_IMPORTED_MODULE_1__["default"]();
+  var posts = new _modules_Posts__WEBPACK_IMPORTED_MODULE_2__["default"]();
+  var search = new _modules_Search__WEBPACK_IMPORTED_MODULE_3__["default"]();
+});
 
 /***/ }),
 

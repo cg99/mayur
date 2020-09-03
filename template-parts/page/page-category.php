@@ -1,7 +1,7 @@
 <div class="group-container">
     <div class="group">
         <div class="group-heading">
-            <h3><?php wp_title('') ?></h3>
+            <h3><?php single_cat_title(); ?></h3>
         </div>
         <div class="post-group" id="group8">
             <?php if (have_posts() ) : while ( have_posts() ) : the_post(); ?>

@@ -48,14 +48,14 @@
         <div class="sidebar">
             <div></div>
             <?php
-                $getExpiryDate = get_theme_mod('ad_expiry_date_23', 'default');
+                $getExpiryDate = get_theme_mod('ad_expiry_date_26', 'default');
 				$expire = strtotime($getExpiryDate);
 				$today = strtotime(date("Y-m-d"));
 				if($expire > $today) { ?>
                 <div class="bigyapan">
                     <figure>
                         <figcaption class="">- Advertisement -</figcaption>     
-                        <img src="<?php echo get_theme_mod('home_ad_23', 'default');?>" alt="Bigyapan">
+                        <img src="<?php echo get_theme_mod('home_ad_26', 'default');?>" alt="Bigyapan">
                     </figure>
                 </div>
            <?php } ?>

@@ -114,12 +114,18 @@
                 <?php endif; ?>
             </div>
             
-            <div class="bigyapan">
-                <figure>
-                    <figcaption class="">- Advertisement -</figcaption>     
-                    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/post_img.png" alt="Bigyapan">
-                </figure>
-           </div>
+            <?php
+                $getExpiryDate = get_theme_mod('ad_expiry_date_28', 'default');
+                $expire = strtotime($getExpiryDate);
+                $today = strtotime(date("Y-m-d"));
+                if($expire > $today) { ?>
+                <div class="bigyapan">
+                    <figure>
+                        <figcaption class="">- Advertisement -</figcaption>     
+                        <img src="<?php echo get_theme_mod('home_ad_28', 'default');?>" alt="Bigyapan">
+                    </figure>
+                </div>
+           <?php } ?>
         </div>
     </div>
 </div>

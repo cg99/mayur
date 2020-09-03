@@ -25,6 +25,15 @@ require get_theme_file_path('/inc/posts-route.php');
 	}
 
 
+	add_filter( 'script_loader_tag', function ( $tag, $handle ) {
+
+	    if ( 'js_app' !== $handle )
+	        return $tag;
+
+	    return str_replace( ' src', ' defer="defer" src', $tag );
+	}, 10, 2 );
+
+
 	add_theme_support( 'post-thumbnails' );
 
 
