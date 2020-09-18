@@ -10770,7 +10770,19 @@ function () {
       var _this = this;
 
       // console.log("events are here");
-      window.addEventListener('scroll', this.scrollFunction.bind(this));
+      var cached = null;
+      window.addEventListener('scroll', function (event) {
+        if (!cached) {
+          setTimeout(function () {
+            //you can access the original event at `cached`
+            _this.scrollFunction();
+
+            cached = null;
+          }, 100);
+        }
+
+        cached = event;
+      });
       this.btnTop.addEventListener('click', this.scrollToTop);
 
       if (this.hasTrendElement == true) {
@@ -10807,7 +10819,6 @@ function () {
       var menuMarginBottom = parseInt(menuStyle.marginBottom);
 
       if (window.pageYOffset > navLoc) {
-        var originalNavLoc = navLoc;
         this.navbar.classList.add('sticky');
         this.header.style.paddingBottom = "".concat(this.navbar.offsetHeight + menuMarginBottom, "px");
 
@@ -10897,7 +10908,7 @@ function () {
       if (this.showMenu) {
         //if menu is visible
         this.mobileMenu.style.left = '-100%';
-        this.gridContainer.style.transform = 'scale(1)';
+        this.gridContainer.style.transform = 'initial';
         this.gridContainer.style.marginTop = '0';
         document.body.style.overflow = 'auto';
       } else {
@@ -10937,90 +10948,7 @@ function () {
   return Global;
 }();
 
-/* harmony default export */ __webpack_exports__["default"] = (Global); // foot notes: 
-// 'this' can be used to refer to elements, without passing any parameters, directly in a method
-
-/***/ }),
-
-/***/ "./src/js/modules/Posts.js":
-/*!*********************************!*\
-  !*** ./src/js/modules/Posts.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-var Posts =
-/*#__PURE__*/
-function () {
-  // 1. describe and create/initiate objects
-  function Posts() {
-    _classCallCheck(this, Posts);
-
-    // this.getPosts();
-    this.events();
-  } // 2. events
-
-
-  _createClass(Posts, [{
-    key: "events",
-    value: function events() {} // 3. methods/functions/actions
-
-  }, {
-    key: "getPosts",
-    value: function getPosts() {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
-        // beforeSend: (xhr) => {
-        // 	xhr.setRequestHeader("X-WP-Nonce", mayur.nonce);
-        // },
-        url: mayur.root_url + '/wp-json/mayur/v1/posts',
-        type: 'GET',
-        dataType: 'json',
-        // added data type
-        success: function success(res) {
-          this.posts = res; //loop through json data
-
-          this.posts.forEach(function (post) {
-            //Now create element add class name, innerhtml and data then append it
-            var postContainer = document.querySelector('#postHome');
-            var newPost = document.createElement('article');
-            newPost.className = "post";
-            var postContent = "\n\t\t\t\t\t\t<figure class='featured_figure'>\n\t\t\t\t\t\t\t<img class=\"featured_img\" src=\"".concat(post.featured_img, "\" alt=\"Featured\">\n\t\t\t\t\t\t</figure>\n\n\t\t\t\t\t\t<h3 class=\"post-title\">\n\t\t\t\t\t\t\t<a href=\"#\">").concat(post.title, "</a>\n\t\t\t\t\t\t</h3>\n\n\t\t\t\t\t\t<div class=\"post-date\">\n\t\t\t\t        \t<span>\n\t\t\t\t        \t\t<timeago datetime=\"").concat(post.date, "\">\n\t\t\t\t        \t\t\t").concat(post.date, "\n\t\t\t    \t\t\t\t</timeago>\n\t\t\t    \t\t\t</span>\n\t\t\t\t\t\t</div> \n\n\t\t\t\t\t\t<div class=\"post-category\">\n\t\t\t\t\t");
-            var categories = post.category; // loop through categories
-
-            categories.forEach(function (category) {
-              var cat = category.name;
-              postContent += "".concat(cat != 'Uncategorized' ? "<span>".concat(cat, "</span>") : '');
-            });
-            postContent += '</div>';
-            newPost.innerHTML = postContent; //add the content in the post	
-
-            postContainer.appendChild(newPost); //add post inside the container
-          });
-        },
-        error: function error(err) {
-          console.log("Sorry");
-          console.log(err);
-        }
-      });
-    }
-  }]);
-
-  return Posts;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (Posts);
+/* harmony default export */ __webpack_exports__["default"] = (Global); // foot notes:
 
 /***/ }),
 
@@ -11173,19 +11101,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_Global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Global */ "./src/js/modules/Global.js");
-/* harmony import */ var _modules_Posts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/Posts */ "./src/js/modules/Posts.js");
-/* harmony import */ var _modules_Search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/Search */ "./src/js/modules/Search.js");
+/* harmony import */ var _modules_Search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/Search */ "./src/js/modules/Search.js");
 // 3rd party packages from NPM
  // Our modules / classes
-
 
 
  // Instantiate a new object using our modules/classes
 
 document.addEventListener('DOMContentLoaded', function (event) {
   var global = new _modules_Global__WEBPACK_IMPORTED_MODULE_1__["default"]();
-  var posts = new _modules_Posts__WEBPACK_IMPORTED_MODULE_2__["default"]();
-  var search = new _modules_Search__WEBPACK_IMPORTED_MODULE_3__["default"]();
+  var search = new _modules_Search__WEBPACK_IMPORTED_MODULE_2__["default"]();
 });
 
 /***/ }),

@@ -48,7 +48,17 @@ class Global {
 
 		// console.log("events are here");
 		
-		window.addEventListener('scroll', this.scrollFunction.bind(this));
+		let cached = null
+		window.addEventListener('scroll', event => {
+		if (!cached) {
+			setTimeout(() => {
+			//you can access the original event at `cached`
+				this.scrollFunction()
+			cached = null
+			}, 100)
+		}
+		cached = event
+		})
 
 		this.btnTop.addEventListener('click', this.scrollToTop);
 
@@ -82,8 +92,8 @@ class Global {
 		const navLoc = this.navbar.offsetTop;
 		const menuStyle = this.navbar.currentStyle || window.getComputedStyle(this.navbar); // get css properties
 		const menuMarginBottom = parseInt(menuStyle.marginBottom);
+		
 		if (window.pageYOffset > navLoc) {
-			var originalNavLoc = navLoc;
 			this.navbar.classList.add('sticky');
 			this.header.style.paddingBottom = `${this.navbar.offsetHeight + menuMarginBottom}px`;
 			
@@ -158,12 +168,13 @@ class Global {
 	}
 
 	toggleNav() {
-		if(this.showMenu) {//if menu is visible
+		if (this.showMenu) {//if menu is visible
 			this.mobileMenu.style.left = '-100%'
-			this.gridContainer.style.transform = 'scale(1)';
+			this.gridContainer.style.transform = 'initial';
 			this.gridContainer.style.marginTop = '0';
 			document.body.style.overflow = 'auto';
-		}else{
+			
+		} else {
 			this.mobileMenu.style.left = '0';
 			this.gridContainer.style.transform = 'scale(0.9)';
 			this.gridContainer.style.marginTop = '6%';
@@ -195,4 +206,3 @@ class Global {
 
 export default Global
 // foot notes: 
-// 'this' can be used to refer to elements, without passing any parameters, directly in a method
