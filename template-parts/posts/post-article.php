@@ -26,17 +26,17 @@
 					</span>
 				</div> 
 
-				<div class="post-category">
+				<!-- <div class="post-category">
 					<?php 
-					$categories = get_the_category();
-					if($categories[0]->name !== 'Uncategorized'){ 
-						$count = 1;
-						foreach($categories as $category){ ?>
-						<span>
-							<?php echo $category->name; $count++ ; if($count >= 5)  break; ?>
-						</span>
-					<?php } } ?>
-				</div>
+					// $categories = get_the_category();
+					// if($categories[0]->name !== 'Uncategorized'){ 
+					//	$count = 1;
+					//	foreach($categories as $category){ ?>
+					//	<span>
+						<?php // echo $category->name; $count++ ; if($count >= 5)  break; ?>
+					//	</span>
+					<?php // } } ?>
+				</div> -->
 
 				<div class="post-excerpt">
                     <?php the_excerpt() ?>
