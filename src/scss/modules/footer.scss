@@ -1,0 +1,110 @@
+@import './variables.scss';
+
+
+.footer-top, .footer-bottom{
+  @include box-layout;
+  a, p{
+    margin: 0;
+    color: #fff;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+
+.footer{
+	background-color: $black;
+	color: #fff;
+	.footer-top{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-bottom: 1rem;
+    .col{
+      display: flex;
+      justify-content: center;
+    }
+    .col:first-child{
+      justify-content: flex-start;
+    }
+    .col:last-child{
+      justify-content: flex-end;
+    }
+	}
+	.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    background-color: $blue;
+    padding-top: 10px;
+    padding-bottom: 10px;
+	}
+}
+
+
+.social-links {
+  width: fit-content;
+  a{
+    height: inherit;
+    padding-right: 6px;
+    font-size: 26px;
+    img{
+      width: 24px;
+      filter: invert(0.9);
+    }
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+
+.footer {
+	.footer-top {
+    .wrapper {
+      h2 {
+        border-bottom: 2px solid #666;
+        margin-bottom: 5px;
+        font-size: 26px;
+      }
+      ul {
+        padding: 0;
+        ul {
+          list-style: none;
+          padding: 0;
+          li {
+            margin: 2px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// scroll to top button
+#topBtn {
+  display: block; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: -50px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #333; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 0; /* Some padding */
+  height: 40px;
+  border-radius: 50%; /* Rounded corners */
+  transition: bottom 0.2s ease-in-out;
+}
+
+
+#topBtn img{
+	width: 40px;
+}
+
+
+#topBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}

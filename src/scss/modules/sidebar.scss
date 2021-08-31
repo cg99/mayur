@@ -1,0 +1,22 @@
+.single-sidebar {
+    margin-bottom: 10px;
+    .wrapper {
+        #sidebar-one {
+            text-align: center;
+        }
+    }
+    .group-heading{
+        border-bottom-color: #444;
+        h3 {
+            color: #fff;
+            background-color: #444;
+        }
+    }
+}
+
+.sidebar .popular-post {
+    .post > a {
+        display: flex;
+        align-items: center;
+    }
+}

@@ -1,0 +1,106 @@
+@import 'variables.scss';
+
+.main {
+	@include box-layout;
+}
+
+.post:first-child{grid-area: featured}
+.post:nth-child(2){grid-area: side1}
+.post:nth-child(3){grid-area: side2}
+.post:nth-child(4){grid-area: side3}
+.post:nth-child(5){grid-area: side4}
+
+// main posts section
+.main-content {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    padding: 10px 0;
+    div.post-container{
+        display: inline-grid;
+        grid-template-areas:
+        'featured side1 side2'
+        'featured side3 side4';
+        grid-gap: 20px;
+        // width: 100%;
+        // margin: 1rem 0;
+        article.post{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin: 0 auto;
+            width: 240px;
+            height: auto;
+            transition: transform 0.1s ease-in-out;
+            figure{
+                margin: auto;
+                width: 240px;
+                height: 160px;
+                overflow: hidden;
+                img {
+                    width: inherit;
+                    height: inherit;
+                    object-fit: cover;
+                }
+            }  
+            .post-title{
+                a{
+                    color: #333;
+                }
+                a:hover{
+                    text-decoration: underline;
+                }
+            }
+            .post-date{
+                font-size: 11px;
+                color: #666;
+            }
+            .post-category{
+                span{
+                    margin: 0;
+                    margin-right: 4px;
+                    padding: 1px 2px 1px 2px;
+                    font-size: 12px;
+                    font-style: italic;
+                    color: #666;
+                    background: #ebedf0;
+                }
+            }
+            .post-excerpt{
+                color: #444;
+                display: none;
+            }
+        }
+        article.post:first-child{
+            width: 600px;
+            figure{
+                width: 600px;
+                height: auto;
+                img{width: inherit;}
+            }
+        }
+        article.post:hover{
+            transform: scale(1.03);
+        }
+    }    
+}
+
+.post-title, .post-date, .post-excerpt, .post-category{
+    text-align: left;
+    margin: 0;
+}
+
+
+//advertisement
+.adv-wrapper{
+    display: flex;
+}
+.advertise {
+    figure{
+        // margin-right: auto;
+        width: fit-content;
+        img{
+            height: auto;
+            width: 300px;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+
+.category-page-main {
+    display: flex;
+    padding-top: 10px;
+    .main-content {
+        padding: 10px;
+        .group-container {
+            display: block;
+        }
+        .post {
+            width: 340px;
+            figure{
+                width: 340px;
+            }
+        }
+        .group-heading {
+            margin: 10px 0;
+            h3 {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.pagination {
+    margin-top: 20px;
+    .page-numbers {
+        padding: 4px;
+    }
+}
