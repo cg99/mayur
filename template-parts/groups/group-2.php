@@ -15,11 +15,11 @@
                     $cat_post = 'uncategorized';
                 } else {
                     $cat_post = $cat->slug;
+                    echo $cat->name;
                 }
 
                 if (empty($cat_post)) { //check if category is set
                     $cat_post = 'uncategorized';
-                    echo $cat->name;
                 }
 
                 ?>
