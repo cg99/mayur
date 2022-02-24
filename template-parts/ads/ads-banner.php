@@ -2,7 +2,7 @@
     <section class="advertise">
         <figure>
             <img src="<?php echo esc_url(get_theme_mod('home_ads', 'default')); ?>">
-            <figcaption class="hidden">Advertisement</figcaption>     
+            <!-- <figcaption class="hidden"></figcaption>      -->
         </figure>
     </section>
 </div>
